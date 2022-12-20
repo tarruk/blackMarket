@@ -45,7 +45,8 @@ struct ButtonViewModifier: ViewModifier {
   
   func body(content: Content) -> some View {
     content
-      .frame(maxWidth: style.width, maxHeight: style.height)
+      .frame(maxWidth: style.width)
+      .frame(height: style.height)
       .background(style.backgroundColor)
       .foregroundColor(style.textColor)
       .font(.headline)

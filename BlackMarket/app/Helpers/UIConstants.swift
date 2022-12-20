@@ -28,4 +28,18 @@ struct UI {
     static let small: CGFloat = 12
     static let verySmall: CGFloat = 4
   }
+  
+  enum ScaleFactor {
+    static let huge: CGFloat = 0.8
+    static let large: CGFloat = 0.7
+    static let medium: CGFloat = 0.6
+    static let small: CGFloat = 0.5
+  }
+  
+  enum IconSize {
+    static let huge: CGFloat = 16
+    static let large: CGFloat = 14
+    static let medium: CGFloat = 12
+    static let small: CGFloat = 10
+  }
 }

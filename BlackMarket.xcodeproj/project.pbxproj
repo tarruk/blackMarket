@@ -106,13 +106,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		E51AA7C92940C34D00D13F1C /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Buttons;
-			sourceTree = "<group>";
-		};
 		E51AA7CF2940C92C00D13F1C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,7 +193,6 @@
 			children = (
 				E53508BD2951F930008C5887 /* SecureTextFieldWithReveal */,
 				E5E886792950914C0096F9FD /* BMTextField */,
-				E51AA7C92940C34D00D13F1C /* Buttons */,
 			);
 			path = Components;
 			sourceTree = "<group>";

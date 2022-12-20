@@ -21,7 +21,11 @@ struct SignUpView: View {
             reducer: SignUpCardDomain()
           )
         )
-        .frame(maxWidth: .infinity, maxHeight: reader.size.height * 0.8, alignment: .center)
+        .frame(
+          maxWidth: .infinity,
+          maxHeight: reader.size.height * UI.ScaleFactor.huge,
+          alignment: .center
+        )
         .padding(UI.Padding.large)
       }.position(x: reader.frame(in: .local).midX, y: reader.frame(in: .local).midY)
     }
