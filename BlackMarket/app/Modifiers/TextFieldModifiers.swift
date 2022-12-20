@@ -1,5 +1,5 @@
 //
-//  TextFieldModifiers.swift
+//  TextFieldLoginModifier.swift
 //  BlackMarket
 //
 //  Created by Tarek Radovan on 14/12/2022.
@@ -8,9 +8,9 @@
 import Foundation
 import SwiftUI
 
-struct LoginModifier: ViewModifier {
+struct TextFieldLoginModifier: ViewModifier {
 
-  var borderColor: Color = Color.gray
+  var borderColor: Color = .gray
 
   func body(content: Content) -> some View {
     content

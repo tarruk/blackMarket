@@ -18,10 +18,6 @@ extension String {
     NSLocalizedString(self, comment: comment)
   }
   
-  func localized(withSubstitutions substitutions: String...) -> String {
-    return String(format: self.localized, arguments: substitutions)
-  }
-  
   func transformToLink(withURL url: String) -> AttributedString? {
     guard let attributedText = try? AttributedString(markdown: "\(self)(\(url))") else {
       return ""

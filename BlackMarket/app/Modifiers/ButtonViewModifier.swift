@@ -54,8 +54,8 @@ struct ButtonViewModifier: ViewModifier {
   }
 }
 
-extension BMButton {
-  func withStyle(_ style: ButtonStyle) -> some View {
+extension Text {
+  func withButtonStyle(_ style: ButtonStyle) -> some View {
     modifier(ButtonViewModifier(style: style))
   }
 }

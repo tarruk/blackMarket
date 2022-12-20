@@ -10,20 +10,22 @@
 		E50E7568293F83F90021722B /* BlackMarketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50E7567293F83F90021722B /* BlackMarketApp.swift */; };
 		E50E756C293F83FA0021722B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E50E756B293F83FA0021722B /* Assets.xcassets */; };
 		E50E756F293F83FA0021722B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E50E756E293F83FA0021722B /* Preview Assets.xcassets */; };
-		E51AA7C82940BF7C00D13F1C /* SecureTextFieldWithReveal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51AA7C72940BF7C00D13F1C /* SecureTextFieldWithReveal.swift */; };
+		E51AA7C82940BF7C00D13F1C /* SecureToggleTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51AA7C72940BF7C00D13F1C /* SecureToggleTextFieldView.swift */; };
 		E51AA7CB2940C36000D13F1C /* ButtonViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51AA7CA2940C36000D13F1C /* ButtonViewModifier.swift */; };
 		E51AA7D12940C93500D13F1C /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51AA7D02940C93500D13F1C /* UIConstants.swift */; };
 		E51AA7D32940CF3200D13F1C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51AA7D22940CF3200D13F1C /* Colors.swift */; };
 		E51AA7D52940CFF700D13F1C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E51AA7D42940CFF700D13F1C /* Colors.xcassets */; };
-		E51AA7D72940EB7300D13F1C /* BMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51AA7D62940EB7300D13F1C /* BMButton.swift */; };
 		E51AA7D929410F0300D13F1C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E51AA7D829410F0300D13F1C /* Localizable.strings */; };
 		E51AA7DC29410F2B00D13F1C /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51AA7DB29410F2B00D13F1C /* String+extension.swift */; };
-		E51AA7DE29410FB700D13F1C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51AA7DD29410FB700D13F1C /* Constants.swift */; };
 		E51AA7E0294112C700D13F1C /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51AA7DF294112C700D13F1C /* LocalizedString.swift */; };
+		E53508BF2951F95A008C5887 /* SecureToggleTextFieldDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53508BE2951F95A008C5887 /* SecureToggleTextFieldDomain.swift */; };
 		E5516D24294A701E0026D981 /* TextFieldModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5516D23294A701E0026D981 /* TextFieldModifiers.swift */; };
 		E575D6C5294A132100AB305E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E575D6C4294A132100AB305E /* ComposableArchitecture */; };
 		E575D6C7294A132100AB305E /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = E575D6C6294A132100AB305E /* Dependencies */; };
 		E5D46AF6294B4B9200E392F6 /* View+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D46AF5294B4B9200E392F6 /* View+extension.swift */; };
+		E5E8867B2950915E0096F9FD /* BMTextFieldDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8867A2950915E0096F9FD /* BMTextFieldDomain.swift */; };
+		E5E8867E295091DF0096F9FD /* SignUpCardDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8867D295091DF0096F9FD /* SignUpCardDomain.swift */; };
+		E5E886802950FF390096F9FD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8867F2950FF390096F9FD /* Constants.swift */; };
 		E5F7CCC0293FB0F0006382F2 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F7CCBF293FB0F0006382F2 /* Assets.swift */; };
 		E5F7CCC2293FB139006382F2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F7CCC1293FB139006382F2 /* SignUpView.swift */; };
 		E5F7CCC7293FB4EF006382F2 /* SignUpCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F7CCC6293FB4EF006382F2 /* SignUpCardView.swift */; };
@@ -36,18 +38,20 @@
 		E50E7567293F83F90021722B /* BlackMarketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackMarketApp.swift; sourceTree = "<group>"; };
 		E50E756B293F83FA0021722B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E50E756E293F83FA0021722B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		E51AA7C72940BF7C00D13F1C /* SecureTextFieldWithReveal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextFieldWithReveal.swift; sourceTree = "<group>"; };
+		E51AA7C72940BF7C00D13F1C /* SecureToggleTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureToggleTextFieldView.swift; sourceTree = "<group>"; };
 		E51AA7CA2940C36000D13F1C /* ButtonViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewModifier.swift; sourceTree = "<group>"; };
 		E51AA7D02940C93500D13F1C /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		E51AA7D22940CF3200D13F1C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E51AA7D42940CFF700D13F1C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		E51AA7D62940EB7300D13F1C /* BMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMButton.swift; sourceTree = "<group>"; };
 		E51AA7D829410F0300D13F1C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		E51AA7DB29410F2B00D13F1C /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
-		E51AA7DD29410FB700D13F1C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E51AA7DF294112C700D13F1C /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
+		E53508BE2951F95A008C5887 /* SecureToggleTextFieldDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureToggleTextFieldDomain.swift; sourceTree = "<group>"; };
 		E5516D23294A701E0026D981 /* TextFieldModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifiers.swift; sourceTree = "<group>"; };
 		E5D46AF5294B4B9200E392F6 /* View+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extension.swift"; sourceTree = "<group>"; };
+		E5E8867A2950915E0096F9FD /* BMTextFieldDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMTextFieldDomain.swift; sourceTree = "<group>"; };
+		E5E8867D295091DF0096F9FD /* SignUpCardDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCardDomain.swift; sourceTree = "<group>"; };
+		E5E8867F2950FF390096F9FD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E5F7CCBF293FB0F0006382F2 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		E5F7CCC1293FB139006382F2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		E5F7CCC6293FB4EF006382F2 /* SignUpCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCardView.swift; sourceTree = "<group>"; };
@@ -105,8 +109,6 @@
 		E51AA7C92940C34D00D13F1C /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				E51AA7CA2940C36000D13F1C /* ButtonViewModifier.swift */,
-				E51AA7D62940EB7300D13F1C /* BMButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -115,8 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				E51AA7D02940C93500D13F1C /* UIConstants.swift */,
-				E51AA7DD29410FB700D13F1C /* Constants.swift */,
 				E51AA7DF294112C700D13F1C /* LocalizedString.swift */,
+				E5E8867F2950FF390096F9FD /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -128,6 +130,33 @@
 				E5D46AF5294B4B9200E392F6 /* View+extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E53508BD2951F930008C5887 /* SecureTextFieldWithReveal */ = {
+			isa = PBXGroup;
+			children = (
+				E53508BE2951F95A008C5887 /* SecureToggleTextFieldDomain.swift */,
+				E51AA7C72940BF7C00D13F1C /* SecureToggleTextFieldView.swift */,
+			);
+			path = SecureTextFieldWithReveal;
+			sourceTree = "<group>";
+		};
+		E5E886792950914C0096F9FD /* BMTextField */ = {
+			isa = PBXGroup;
+			children = (
+				E5E8867A2950915E0096F9FD /* BMTextFieldDomain.swift */,
+				E5F7CCC9293FB51D006382F2 /* BMTextFieldView.swift */,
+			);
+			path = BMTextField;
+			sourceTree = "<group>";
+		};
+		E5E8867C295091B80096F9FD /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				E51AA7CA2940C36000D13F1C /* ButtonViewModifier.swift */,
+				E5516D23294A701E0026D981 /* TextFieldModifiers.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		E5F7CCBD293FAF9B006382F2 /* Resources */ = {
@@ -145,6 +174,7 @@
 		E5F7CCBE293FAFAF006382F2 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				E5E8867C295091B80096F9FD /* Modifiers */,
 				E51AA7DA29410F1B00D13F1C /* Extensions */,
 				E51AA7CF2940C92C00D13F1C /* Helpers */,
 				E5F7CCCB293FB634006382F2 /* Protocols */,
@@ -159,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				E5F7CCC1293FB139006382F2 /* SignUpView.swift */,
+				E5E8867D295091DF0096F9FD /* SignUpCardDomain.swift */,
 				E5F7CCC6293FB4EF006382F2 /* SignUpCardView.swift */,
 			);
 			path = SignUp;
@@ -167,10 +198,9 @@
 		E5F7CCC8293FB508006382F2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E53508BD2951F930008C5887 /* SecureTextFieldWithReveal */,
+				E5E886792950914C0096F9FD /* BMTextField */,
 				E51AA7C92940C34D00D13F1C /* Buttons */,
-				E5F7CCC9293FB51D006382F2 /* BMTextFieldView.swift */,
-				E51AA7C72940BF7C00D13F1C /* SecureTextFieldWithReveal.swift */,
-				E5516D23294A701E0026D981 /* TextFieldModifiers.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -263,19 +293,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5F7CCC2293FB139006382F2 /* SignUpView.swift in Sources */,
+				E5E886802950FF390096F9FD /* Constants.swift in Sources */,
 				E51AA7D32940CF3200D13F1C /* Colors.swift in Sources */,
+				E5E8867B2950915E0096F9FD /* BMTextFieldDomain.swift in Sources */,
 				E5D46AF6294B4B9200E392F6 /* View+extension.swift in Sources */,
 				E51AA7CB2940C36000D13F1C /* ButtonViewModifier.swift in Sources */,
 				E5516D24294A701E0026D981 /* TextFieldModifiers.swift in Sources */,
-				E51AA7D72940EB7300D13F1C /* BMButton.swift in Sources */,
 				E51AA7E0294112C700D13F1C /* LocalizedString.swift in Sources */,
 				E5F7CCCA293FB51D006382F2 /* BMTextFieldView.swift in Sources */,
+				E53508BF2951F95A008C5887 /* SecureToggleTextFieldDomain.swift in Sources */,
 				E50E7568293F83F90021722B /* BlackMarketApp.swift in Sources */,
 				E5F7CCC7293FB4EF006382F2 /* SignUpCardView.swift in Sources */,
 				E5F7CCC0293FB0F0006382F2 /* Assets.swift in Sources */,
 				E51AA7D12940C93500D13F1C /* UIConstants.swift in Sources */,
-				E51AA7C82940BF7C00D13F1C /* SecureTextFieldWithReveal.swift in Sources */,
-				E51AA7DE29410FB700D13F1C /* Constants.swift in Sources */,
+				E51AA7C82940BF7C00D13F1C /* SecureToggleTextFieldView.swift in Sources */,
+				E5E8867E295091DF0096F9FD /* SignUpCardDomain.swift in Sources */,
 				E5F7CCCD293FB643006382F2 /* Validatable+String.swift in Sources */,
 				E51AA7DC29410F2B00D13F1C /* String+extension.swift in Sources */,
 			);

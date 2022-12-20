@@ -13,7 +13,6 @@ enum ValidationType {
   case numeric
   case date(dateFormat: String)
   case phone
-  case none
   case custom(isValid: (String) -> Bool)
 }
 
@@ -33,11 +32,9 @@ extension String: Validatable {
         return isDateFormatted(dateFormat)
       case .phone:
         return isPhoneNumber()
-      case .none:
-        return true
       case .custom(isValid: let validationBlock):
         return validationBlock(self)
-      default:
+      case .nonEmpty:
         return !isEmpty
       }
     }

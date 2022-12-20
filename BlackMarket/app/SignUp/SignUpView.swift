@@ -11,20 +11,25 @@ import ComposableArchitecture
 struct SignUpView: View {
   
   var body: some View {
-    ZStack {
-      Image.backgroundImage
-      SignUpCardView(
-        store: Store(
-          initialState: SignUpCardDomain.State(),
-          reducer: SignUpCardDomain()
+    GeometryReader { reader in
+      ZStack {
+        Image.background
+          .ignoresSafeArea()
+        SignUpCardView(
+          store: Store(
+            initialState: SignUpCardDomain.State(),
+            reducer: SignUpCardDomain()
+          )
         )
-      ).padding(UI.Padding.large)
+        .frame(maxWidth: .infinity, maxHeight: reader.size.height * 0.8, alignment: .center)
+        .padding(UI.Padding.large)
+      }.position(x: reader.frame(in: .local).midX, y: reader.frame(in: .local).midY)
     }
   }
 }
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-     SignUpView()
+      SignUpView()
     }
 }

@@ -22,7 +22,7 @@ struct UI {
   }
   
   enum Padding {
-    static let infinity: CGFloat = 42
+    static let huge: CGFloat = 42
     static let large: CGFloat = 32
     static let medium: CGFloat = 22
     static let small: CGFloat = 12
