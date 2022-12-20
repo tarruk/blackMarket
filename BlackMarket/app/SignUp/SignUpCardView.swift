@@ -14,69 +14,64 @@ struct SignUpCardView: View {
   
   var body: some View {
     WithViewStore(store, observe: { $0 }) { viewStore in
-      ZStack {
-        RoundedRectangle(cornerRadius: UI.CornerRadius.medium)
-          .foregroundColor(.white)
-        VStack(alignment: .center) {
-          Image.logo
-            .padding()
-          VStack(spacing: UI.Padding.verySmall) {
-            BMTextFieldView(
-              store: store.scope(
-                state: \.emailState,
-                action: SignUpCardDomain.Action.emailChanged
-              )
+      VStack(alignment: .center) {
+        Image.logo
+          .padding()
+        VStack(spacing: UI.Padding.verySmall) {
+          BMTextFieldView(
+            store: store.scope(
+              state: \.emailState,
+              action: SignUpCardDomain.Action.emailChanged
             )
-            BMTextFieldView(
-              store: store.scope(
-                state: \.nameState,
-                action: SignUpCardDomain.Action.nameChanged
-              )
+          )
+          BMTextFieldView(
+            store: store.scope(
+              state: \.nameState,
+              action: SignUpCardDomain.Action.nameChanged
             )
-            BMTextFieldView(
-              store: store.scope(
-                state: \.passwordState,
-                action: SignUpCardDomain.Action.passwordChanged
-              )
+          )
+          BMTextFieldView(
+            store: store.scope(
+              state: \.passwordState,
+              action: SignUpCardDomain.Action.passwordChanged
             )
-            Button(action: {
-              //
-            }, label: {
-              Text(LocalizedString.SignUpCardView.signupButtonTitle)
-                .withButtonStyle(.primary)
-            })
-            .padding(.top)
-            Spacer()
-            HStack {
-              Text(LocalizedString.SignUpCardView.policyDisclaimerFirstPart) +
-              Text("\(.init(viewStore.dataPolicyLink))") +
-              Text(LocalizedString.SignUpCardView.policyDisclaimerSecondPart) +
-              Text("\(.init(viewStore.cookiesPolicyLink))")
+          )
+          Button(action: {
+            //
+          }, label: {
+            Text(LocalizedString.SignUpCardView.signupButtonTitle)
+              .withButtonStyle(.primary)
+          })
+          .padding(.top)
+          Spacer()
+          HStack {
+            Text(LocalizedString.SignUpCardView.policyDisclaimerFirstPart) +
+            Text("\(.init(viewStore.dataPolicyLink))") +
+            Text(LocalizedString.SignUpCardView.policyDisclaimerSecondPart) +
+            Text("\(.init(viewStore.cookiesPolicyLink))")
+          }
+          .frame(maxWidth: .infinity, alignment: .center)
+          .multilineTextAlignment(.center)
+          .font(.subheadline)
+          .foregroundColor(.blackish)
+          .minimumScaleFactor(0.7)
+          HStack {
+            Text(LocalizedString.SignUpCardView.alreadyHaveAccountTitle)
+            Button {
+              // TODO: Go to log in screen
+            } label: {
+              Text(LocalizedString.SignUpCardView.loginButtonTitle)
+                .foregroundColor(.blue)
+                .font(.subheadline)
             }
-            .frame(maxWidth: .infinity, alignment: .center)
-            .multilineTextAlignment(.center)
-            .font(.subheadline)
-            .foregroundColor(.blackish)
-            HStack {
-              Text(LocalizedString.SignUpCardView.alreadyHaveAccountTitle)
-              Button {
-                // TODO: Go to log in screen
-              } label: {
-                Text(LocalizedString.SignUpCardView.loginButtonTitle)
-                  .foregroundColor(.blue)
-                  .font(.subheadline)
-              }
-            }.padding(.top)
-          }.padding()
-        }
+          }
+          .minimumScaleFactor(0.7)
+          .padding(.top, UI.Padding.small)
+        }.padding()
       }
+        .background(.white)
+        .cornerRadius(UI.CornerRadius.medium)
     }
-  }
-}
-
-private extension UI {
-  struct SignUpCardView {
-    static let height: CGFloat = 550
   }
 }
 
