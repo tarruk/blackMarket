@@ -9,17 +9,18 @@ import SwiftUI
 
 enum ButtonStyle {
   case primary
+  case secundary
   
   var height: CGFloat {
     switch self {
-    case .primary:
+    case .primary, .secundary:
       return UI.Button.Height.large
     }
   }
   
   var width: CGFloat {
     switch self {
-    case .primary:
+    case .primary, .secundary:
       return .infinity
     }
   }
@@ -28,6 +29,8 @@ enum ButtonStyle {
     switch self {
     case .primary:
       return .black
+    case .secundary:
+      return .clear
     }
   }
   
@@ -35,6 +38,8 @@ enum ButtonStyle {
     switch self {
     case .primary:
       return .white
+    case .secundary:
+      return .blackish
     }
   }
 }
@@ -42,22 +47,48 @@ enum ButtonStyle {
 struct ButtonViewModifier: ViewModifier {
   
   let style: ButtonStyle
+  var disabled: Bool = false
   
   func body(content: Content) -> some View {
-    content
+    switch style {
+    case .primary:
+      buildBorderedConfig(toContent: content)
+        .disabled(disabled)
+    case .secundary:
+      buildBorderlessConfig(toContent: content)
+    }
+  }
+  
+  func buildBorderedConfig(toContent content: Content) -> some View {
+    return content
       .frame(maxWidth: style.width)
       .frame(height: style.height)
-      .background(style.backgroundColor)
-      .foregroundColor(style.textColor)
+      .background(disabled ? .lightGray : style.backgroundColor)
+      .foregroundColor(disabled ? .darkGray : style.textColor)
       .font(.headline)
       .fontWeight(.semibold)
-      .cornerRadius(5)
+      .cornerRadius(UI.CornerRadius.small)
+  }
+  
+  func buildBorderlessConfig(toContent content: Content) -> some View {
+    return content
+      .font(.headline)
+      .fontWeight(.semibold)
+      .frame(maxWidth: style.width)
+      .frame(height: style.height)
+      .foregroundColor(style.textColor)
+      .overlay(
+        RoundedRectangle(cornerRadius: UI.CornerRadius.small)
+          .stroke(lineWidth: 1)
+          .background(style.backgroundColor)
+          .foregroundColor(style.textColor)
+      )
   }
 }
 
 extension Text {
-  func withButtonStyle(_ style: ButtonStyle) -> some View {
-    modifier(ButtonViewModifier(style: style))
+  func withButtonStyle(_ style: ButtonStyle, disabled: Bool) -> some View {
+    modifier(ButtonViewModifier(style: style, disabled: disabled))
   }
 }
 

@@ -10,4 +10,6 @@ import SwiftUI
 
 extension Color {
   static let blackish = Color("blackish")
+  static let lightGray = Color("light-gray")
+  static let darkGray = Color("dark-gray")
 }

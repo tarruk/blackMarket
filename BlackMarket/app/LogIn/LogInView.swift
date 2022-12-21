@@ -1,29 +1,27 @@
 //
-//  SignUpView.swift
+//  LogInView.swift
 //  BlackMarket
 //
-//  Created by Tarek Radovan on 06/12/2022.
+//  Created by Tarek Radovan on 20/12/2022.
 //
 
 import SwiftUI
 import ComposableArchitecture
 
-struct SignUpView: View {
+struct LogInView: View {
   
   var body: some View {
     GeometryReader { reader in
       ZStack {
         Image.background
           .ignoresSafeArea()
-        SignUpCardView(
-          store: Store(
-            initialState: SignUpCardDomain.State(),
-            reducer: SignUpCardDomain()
-          )
-        )
+        LogInCardView(store: Store(
+          initialState: LogInCardDomain.State(),
+          reducer: LogInCardDomain()
+        ))
         .frame(
           maxWidth: .infinity,
-          maxHeight: reader.size.height * UI.ScaleFactor.huge,
+          maxHeight: reader.size.height * 0.8,
           alignment: .center
         )
         .padding(UI.Padding.large)
@@ -35,8 +33,8 @@ struct SignUpView: View {
   }
 }
 
-struct SignUpView_Previews: PreviewProvider {
-    static var previews: some View {
-      SignUpView()
-    }
+struct LogInView_Previews: PreviewProvider {
+  static var previews: some View {
+    LogInView()
+  }
 }
