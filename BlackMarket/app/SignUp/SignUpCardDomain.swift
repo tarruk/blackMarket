@@ -14,26 +14,26 @@ struct SignUpCardDomain: ReducerProtocol {
     
     var nameState = BMTextFieldDomain.State(
       validations: [.nonEmpty],
-      placeholder: LocalizedString.SignUpCardDomain.nameTextfieldPlaceholder,
-      errorMessage: LocalizedString.SignUpCardDomain.nameTextfieldError,
-      title: LocalizedString.SignUpCardDomain.nameTextfieldTitle
+      placeholder: LocalizedString.Auth.nameTextfieldPlaceholder,
+      errorMessage: LocalizedString.Auth.nameTextfieldError,
+      title: LocalizedString.Auth.nameTextfieldTitle
     )
     var emailState = BMTextFieldDomain.State(
       validations: [.email, .nonEmpty],
-      placeholder: LocalizedString.SignUpCardDomain.emailTextfieldPlaceholder,
-      errorMessage: LocalizedString.SignUpCardDomain.emailTextfieldError,
-      title: LocalizedString.SignUpCardDomain.emailTextfieldTitle
+      placeholder: LocalizedString.Auth.emailTextfieldPlaceholder,
+      errorMessage: LocalizedString.Auth.emailTextfieldError,
+      title: LocalizedString.Auth.emailTextfieldTitle
     )
     var passwordState = BMTextFieldDomain.State(
       validations: [
         .custom(isValid: { value in
-          value.count >= Constants.Value.minimumPasswordLength
+          value.count >= Constants.Auth.minimumPasswordLength
         })
         , .nonEmpty
       ],
-      placeholder: LocalizedString.SignUpCardDomain.passwordTextfieldPlaceholder,
-      errorMessage: LocalizedString.SignUpCardDomain.passwordTextfieldError,
-      title: LocalizedString.SignUpCardDomain.passwordTextfieldTitle,
+      placeholder: LocalizedString.Auth.passwordTextfieldPlaceholder,
+      errorMessage: LocalizedString.Auth.passwordTextfieldError,
+      title: LocalizedString.Auth.passwordTextfieldTitle,
       isSecure: true
     )
     
@@ -43,6 +43,12 @@ struct SignUpCardDomain: ReducerProtocol {
     var cookiesPolicyLink: AttributedString =  LocalizedString.SignUpCardDomain.cookiesPolicy.transformToLink(
       withURL: Constants.Path.cookiesPolicy
     ) ?? ""
+    
+    var canSignUp: Bool {
+      return emailState.isValid
+      && nameState.isValid
+      && passwordState.isValid
+    }
   }
   
   enum Action {
@@ -77,25 +83,8 @@ private extension LocalizedString {
   enum SignUpCardDomain {
     static let dataPolicy = "DATA_POLICY".localized
     static let cookiesPolicy = "COOKIES_POLICY".localized
-    static let emailTextfieldTitle = "EMAIL_TEXTFIELD_TITLE".localized
-    static let nameTextfieldTitle = "NAME_TEXTFIELD_TITLE".localized
-    static let passwordTextfieldTitle = "PASSWORD_TEXTFIELD_TITLE".localized
-    static let emailTextfieldError = "EMAIL_TEXTFIELD_ERROR".localized
-    static let nameTextfieldError = "NAME_TEXTFIELD_ERROR".localized
-    static let passwordTextfieldError = "PASSWORD_TEXTFIELD_ERROR".localized
-    static let emailTextfieldPlaceholder = "EMAIL_TEXTFIELD_PLACEHOLDER".localized
-    static let nameTextfieldPlaceholder = "NAME_TEXTFIELD_PLACEHOLDER".localized
-    static let passwordTextfieldPlaceholder = "PASSWORD_TEXTFIELD_PLACEHOLDER".localized
-    static let signupButtonTitle = "SIGNUP_BUTTON_TITLE".localized
     static let policyDisclaimerFirstPart = "POLICY_DISCLAIMER_1".localized
     static let policyDisclaimerSecondPart = "POLICY_DISCLAIMER_2".localized
-    static let loginButtonTitle = "LOGIN_BUTTON_TITLE".localized
     static let alreadyHaveAccountTitle = "ALREADY_HAVE_ACCOUNT_TITLE".localized
-  }
-}
-
-private extension Constants {
-  enum Value {
-    static let minimumPasswordLength: Int = 8
   }
 }

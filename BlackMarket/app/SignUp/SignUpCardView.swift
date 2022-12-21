@@ -36,12 +36,13 @@ struct SignUpCardView: View {
               action: SignUpCardDomain.Action.passwordChanged
             )
           )
-          Button(action: {
-            //
-          }, label: {
-            Text(LocalizedString.SignUpCardView.signupButtonTitle)
-              .withButtonStyle(.primary)
-          })
+          BMButton(
+            title: LocalizedString.SignUpCardView.signupButtonTitle,
+            style: .primary,
+            disabled: !viewStore.canSignUp
+          ) {
+              // Sign in
+            }
           .padding(.top)
           Spacer()
           HStack {
@@ -64,7 +65,7 @@ struct SignUpCardView: View {
                 .foregroundColor(.blue)
                 .font(.subheadline)
             }
-          }
+          }.disabled(!viewStore.canSignUp)
           .minimumScaleFactor(0.7)
           .padding(.top, UI.Padding.small)
         }.padding()

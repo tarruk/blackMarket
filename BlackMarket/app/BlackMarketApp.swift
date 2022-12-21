@@ -11,7 +11,7 @@ import SwiftUI
 struct BlackMarketApp: App {
     var body: some Scene {
       WindowGroup {
-          SignUpView()
+          LogInView()
       }
     }
 }
