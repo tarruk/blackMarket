@@ -29,7 +29,7 @@ struct SecureToggleTextFieldView: View {
           viewStore.send(.showPassword)
         }, label: {
           Image.eye(slashed: viewStore.showPassword)
-            .font(.system(size: 16, weight: .regular))
+            .font(.system(size: UI.IconSize.huge, weight: .regular))
             .foregroundColor(.black)
         })
       }.synchronize(viewStore.binding(\.$focusedField), self.$focusedField)

@@ -23,7 +23,7 @@ struct SignUpView: View {
         )
         .frame(
           maxWidth: .infinity,
-          maxHeight: reader.size.height * 0.8,
+          maxHeight: reader.size.height * UI.ScaleFactor.huge,
           alignment: .center
         )
         .padding(UI.Padding.large)

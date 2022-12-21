@@ -55,7 +55,7 @@ struct SignUpCardView: View {
           .multilineTextAlignment(.center)
           .font(.subheadline)
           .foregroundColor(.blackish)
-          .minimumScaleFactor(0.7)
+          .minimumScaleFactor(UI.ScaleFactor.large)
           HStack {
             Text(LocalizedString.SignUpCardView.alreadyHaveAccountTitle)
             Button {
@@ -66,7 +66,7 @@ struct SignUpCardView: View {
                 .font(.subheadline)
             }
           }.disabled(!viewStore.canSignUp)
-          .minimumScaleFactor(0.7)
+          .minimumScaleFactor(UI.ScaleFactor.large)
           .padding(.top, UI.Padding.small)
         }.padding()
       }
