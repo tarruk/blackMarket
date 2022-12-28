@@ -23,10 +23,23 @@
 		E53508C42952453D008C5887 /* BMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53508C32952453D008C5887 /* BMButton.swift */; };
 		E53508C7295251D5008C5887 /* LogInCardDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53508C6295251D5008C5887 /* LogInCardDomain.swift */; };
 		E5516D24294A701E0026D981 /* TextFieldModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5516D23294A701E0026D981 /* TextFieldModifiers.swift */; };
+		E569ACD02955F93600D9E39E /* RSSwiftNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = E569ACCF2955F93600D9E39E /* RSSwiftNetworking */; };
+		E569ACD22955F93600D9E39E /* RSSwiftNetworkingAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E569ACD12955F93600D9E39E /* RSSwiftNetworkingAlamofire */; };
 		E575D6C5294A132100AB305E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E575D6C4294A132100AB305E /* ComposableArchitecture */; };
 		E575D6C7294A132100AB305E /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = E575D6C6294A132100AB305E /* Dependencies */; };
 		E57BCF4A295340B70089B88A /* LogInCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57BCF49295340B70089B88A /* LogInCardView.swift */; };
+		E57CCD2829563EC0003FE6E4 /* SessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CCD2729563EC0003FE6E4 /* SessionProvider.swift */; };
+		E57CCD2B29563ED5003FE6E4 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CCD2A29563ED5003FE6E4 /* Session.swift */; };
+		E57CCD2D29563FFB003FE6E4 /* Dictionary+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CCD2C29563FFB003FE6E4 /* Dictionary+extension.swift */; };
+		E57CCD3029564028003FE6E4 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CCD2F29564028003FE6E4 /* SessionManager.swift */; };
+		E57CCD33295641DE003FE6E4 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CCD32295641DE003FE6E4 /* AuthService.swift */; };
+		E57CCD35295642B1003FE6E4 /* AuthEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CCD34295642B1003FE6E4 /* AuthEndpoint.swift */; };
+		E57CCD3729564393003FE6E4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CCD3629564393003FE6E4 /* User.swift */; };
+		E57CCD39295644B1003FE6E4 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CCD38295644B1003FE6E4 /* UserDataManager.swift */; };
+		E5914829295B83A800F6ED86 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5914828295B83A800F6ED86 /* GenericResponse.swift */; };
 		E5D46AF6294B4B9200E392F6 /* View+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D46AF5294B4B9200E392F6 /* View+extension.swift */; };
+		E5D551302959F94D00613ECC /* BMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5512F2959F94D00613ECC /* BMClient.swift */; };
+		E5E6968E295C758700CCE692 /* AuthServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E6968D295C758700CCE692 /* AuthServiceMock.swift */; };
 		E5E8867B2950915E0096F9FD /* BMTextFieldDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8867A2950915E0096F9FD /* BMTextFieldDomain.swift */; };
 		E5E8867E295091DF0096F9FD /* SignUpCardDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8867D295091DF0096F9FD /* SignUpCardDomain.swift */; };
 		E5E886802950FF390096F9FD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8867F2950FF390096F9FD /* Constants.swift */; };
@@ -56,7 +69,19 @@
 		E53508C6295251D5008C5887 /* LogInCardDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCardDomain.swift; sourceTree = "<group>"; };
 		E5516D23294A701E0026D981 /* TextFieldModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifiers.swift; sourceTree = "<group>"; };
 		E57BCF49295340B70089B88A /* LogInCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCardView.swift; sourceTree = "<group>"; };
+		E57CCD2729563EC0003FE6E4 /* SessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionProvider.swift; sourceTree = "<group>"; };
+		E57CCD2A29563ED5003FE6E4 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		E57CCD2C29563FFB003FE6E4 /* Dictionary+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+extension.swift"; sourceTree = "<group>"; };
+		E57CCD2F29564028003FE6E4 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		E57CCD32295641DE003FE6E4 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		E57CCD34295642B1003FE6E4 /* AuthEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpoint.swift; sourceTree = "<group>"; };
+		E57CCD3629564393003FE6E4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E57CCD38295644B1003FE6E4 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
+		E5914824295B6EEC00F6ED86 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
+		E5914828295B83A800F6ED86 /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 		E5D46AF5294B4B9200E392F6 /* View+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extension.swift"; sourceTree = "<group>"; };
+		E5D5512F2959F94D00613ECC /* BMClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMClient.swift; sourceTree = "<group>"; };
+		E5E6968D295C758700CCE692 /* AuthServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceMock.swift; sourceTree = "<group>"; };
 		E5E8867A2950915E0096F9FD /* BMTextFieldDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMTextFieldDomain.swift; sourceTree = "<group>"; };
 		E5E8867D295091DF0096F9FD /* SignUpCardDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCardDomain.swift; sourceTree = "<group>"; };
 		E5E8867F2950FF390096F9FD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -72,6 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E569ACD22955F93600D9E39E /* RSSwiftNetworkingAlamofire in Frameworks */,
+				E569ACD02955F93600D9E39E /* RSSwiftNetworking in Frameworks */,
 				E575D6C5294A132100AB305E /* ComposableArchitecture in Frameworks */,
 				E575D6C7294A132100AB305E /* Dependencies in Frameworks */,
 			);
@@ -102,6 +129,7 @@
 				E5F7CCBE293FAFAF006382F2 /* app */,
 				E5F7CCBD293FAF9B006382F2 /* Resources */,
 				E50E756D293F83FA0021722B /* Preview Content */,
+				E5914824295B6EEC00F6ED86 /* info.plist */,
 			);
 			path = BlackMarket;
 			sourceTree = "<group>";
@@ -129,6 +157,7 @@
 			children = (
 				E51AA7DB29410F2B00D13F1C /* String+extension.swift */,
 				E5D46AF5294B4B9200E392F6 /* View+extension.swift */,
+				E57CCD2C29563FFB003FE6E4 /* Dictionary+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -158,6 +187,51 @@
 				E53508C32952453D008C5887 /* BMButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		E569ACD32955F94100D9E39E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E57CCD2729563EC0003FE6E4 /* SessionProvider.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E57CCD2929563ECC003FE6E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E57CCD2A29563ED5003FE6E4 /* Session.swift */,
+				E57CCD3629564393003FE6E4 /* User.swift */,
+				E5914828295B83A800F6ED86 /* GenericResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E57CCD2E2956401D003FE6E4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E57CCD2F29564028003FE6E4 /* SessionManager.swift */,
+				E57CCD38295644B1003FE6E4 /* UserDataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		E57CCD31295641D4003FE6E4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E57CCD32295641DE003FE6E4 /* AuthService.swift */,
+				E57CCD34295642B1003FE6E4 /* AuthEndpoint.swift */,
+				E5D5512F2959F94D00613ECC /* BMClient.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E5E6968C295C756E00CCE692 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E5E6968D295C758700CCE692 /* AuthServiceMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		E5E886792950914C0096F9FD /* BMTextField */ = {
@@ -193,6 +267,11 @@
 		E5F7CCBE293FAFAF006382F2 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				E5E6968C295C756E00CCE692 /* Mocks */,
+				E57CCD31295641D4003FE6E4 /* Services */,
+				E57CCD2E2956401D003FE6E4 /* Managers */,
+				E57CCD2929563ECC003FE6E4 /* Model */,
+				E569ACD32955F94100D9E39E /* Networking */,
 				E5E8867C295091B80096F9FD /* Modifiers */,
 				E51AA7DA29410F1B00D13F1C /* Extensions */,
 				E51AA7CF2940C92C00D13F1C /* Helpers */,
@@ -252,6 +331,8 @@
 			packageProductDependencies = (
 				E575D6C4294A132100AB305E /* ComposableArchitecture */,
 				E575D6C6294A132100AB305E /* Dependencies */,
+				E569ACCF2955F93600D9E39E /* RSSwiftNetworking */,
+				E569ACD12955F93600D9E39E /* RSSwiftNetworkingAlamofire */,
 			);
 			productName = BlackMarket;
 			productReference = E50E7564293F83F90021722B /* BlackMarket.app */;
@@ -283,6 +364,7 @@
 			mainGroup = E50E755B293F83F90021722B;
 			packageReferences = (
 				E575D6C3294A132100AB305E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				E569ACCE2955F93600D9E39E /* XCRemoteSwiftPackageReference "RSSwiftNetworking" */,
 			);
 			productRefGroup = E50E7565293F83F90021722B /* Products */;
 			projectDirPath = "";
@@ -313,13 +395,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5F7CCC2293FB139006382F2 /* SignUpView.swift in Sources */,
+				E57CCD39295644B1003FE6E4 /* UserDataManager.swift in Sources */,
 				E5E886802950FF390096F9FD /* Constants.swift in Sources */,
+				E57CCD35295642B1003FE6E4 /* AuthEndpoint.swift in Sources */,
 				E51AA7D32940CF3200D13F1C /* Colors.swift in Sources */,
 				E5E8867B2950915E0096F9FD /* BMTextFieldDomain.swift in Sources */,
+				E5D551302959F94D00613ECC /* BMClient.swift in Sources */,
 				E53508C42952453D008C5887 /* BMButton.swift in Sources */,
 				E5D46AF6294B4B9200E392F6 /* View+extension.swift in Sources */,
+				E57CCD3729564393003FE6E4 /* User.swift in Sources */,
+				E57CCD2829563EC0003FE6E4 /* SessionProvider.swift in Sources */,
 				E51AA7CB2940C36000D13F1C /* ButtonViewModifier.swift in Sources */,
 				E5516D24294A701E0026D981 /* TextFieldModifiers.swift in Sources */,
+				E57CCD2B29563ED5003FE6E4 /* Session.swift in Sources */,
+				E57CCD3029564028003FE6E4 /* SessionManager.swift in Sources */,
 				E51AA7E0294112C700D13F1C /* LocalizedString.swift in Sources */,
 				E5F7CCCA293FB51D006382F2 /* BMTextFieldView.swift in Sources */,
 				E53508C7295251D5008C5887 /* LogInCardDomain.swift in Sources */,
@@ -329,11 +418,15 @@
 				E50E7568293F83F90021722B /* BlackMarketApp.swift in Sources */,
 				E5F7CCC7293FB4EF006382F2 /* SignUpCardView.swift in Sources */,
 				E5F7CCC0293FB0F0006382F2 /* Assets.swift in Sources */,
+				E5E6968E295C758700CCE692 /* AuthServiceMock.swift in Sources */,
 				E51AA7D12940C93500D13F1C /* UIConstants.swift in Sources */,
+				E57CCD2D29563FFB003FE6E4 /* Dictionary+extension.swift in Sources */,
 				E51AA7C82940BF7C00D13F1C /* SecureToggleTextFieldView.swift in Sources */,
 				E5E8867E295091DF0096F9FD /* SignUpCardDomain.swift in Sources */,
+				E5914829295B83A800F6ED86 /* GenericResponse.swift in Sources */,
 				E5F7CCCD293FB643006382F2 /* Validatable+String.swift in Sources */,
 				E51AA7DC29410F2B00D13F1C /* String+extension.swift in Sources */,
+				E57CCD33295641DE003FE6E4 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,11 +483,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SERVER_URL = "https://black-market-juan-rs.herokuapp.com";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -444,10 +539,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SERVER_URL = "https://black-market-juan-rs.herokuapp.com";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -465,6 +562,8 @@
 				DEVELOPMENT_TEAM = K8RM345779;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BlackMarket/info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = blackMarket;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -477,6 +576,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rootstrap.BlackMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SERVER_URL = "https://black-market-juan-rs.herokuapp.com";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -494,6 +594,8 @@
 				DEVELOPMENT_TEAM = K8RM345779;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BlackMarket/info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = blackMarket;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -506,6 +608,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rootstrap.BlackMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SERVER_URL = "https://black-market-juan-rs.herokuapp.com";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -536,6 +639,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E569ACCE2955F93600D9E39E /* XCRemoteSwiftPackageReference "RSSwiftNetworking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rootstrap/RSSwiftNetworking";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		E575D6C3294A132100AB305E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
@@ -547,6 +658,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E569ACCF2955F93600D9E39E /* RSSwiftNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E569ACCE2955F93600D9E39E /* XCRemoteSwiftPackageReference "RSSwiftNetworking" */;
+			productName = RSSwiftNetworking;
+		};
+		E569ACD12955F93600D9E39E /* RSSwiftNetworkingAlamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E569ACCE2955F93600D9E39E /* XCRemoteSwiftPackageReference "RSSwiftNetworking" */;
+			productName = RSSwiftNetworkingAlamofire;
+		};
 		E575D6C4294A132100AB305E /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E575D6C3294A132100AB305E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;

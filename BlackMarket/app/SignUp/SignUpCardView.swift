@@ -9,7 +9,8 @@ import SwiftUI
 import ComposableArchitecture
 
 struct SignUpCardView: View {
-  
+
+  private let authService = AuthService()
   let store: StoreOf<SignUpCardDomain>
   
   var body: some View {
@@ -41,8 +42,8 @@ struct SignUpCardView: View {
             style: .primary,
             disabled: !viewStore.canSignUp
           ) {
-              // Sign in
-            }
+            // TODO: trigger signUp action
+          }
           .padding(.top)
           Spacer()
           HStack {
