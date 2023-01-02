@@ -50,6 +50,8 @@ struct SignUpCardDomain: ReducerProtocol {
       && passwordState.isValid
     }
   }
+
+  @Dependency(\.authService) var authService
   
   enum Action {
     case nameChanged(BMTextFieldDomain.Action)
@@ -59,6 +61,8 @@ struct SignUpCardDomain: ReducerProtocol {
     case showPolicy
     case presentLogIn
     case showCookiesPolicy
+    case showPrompt
+    case signIn(email: String, password: String, confirmedPassword: String)
   }
   
   var body: some ReducerProtocol<State, Action> {
@@ -74,7 +78,27 @@ struct SignUpCardDomain: ReducerProtocol {
     }
     
     Reduce { state, action in
-      return .none
+      switch action {
+      case .signIn(let email, let password, let confirmPassword):
+        return .task {
+         let response = await authService.signIn(
+            username: "",
+            email: email,
+            password: password,
+            passwordConfirmation: confirmPassword
+          )
+          switch response {
+          case .success:
+            // TODO: Show prompt of success
+            return .showPrompt
+          case .failure:
+            // TODO: Sho prompt of error
+            return .showPrompt
+          }
+        }
+      default:
+        return .none
+      }
     }
   }
 }
