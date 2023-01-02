@@ -42,4 +42,8 @@ struct UI {
     static let medium: CGFloat = 12
     static let small: CGFloat = 10
   }
+  
+  enum ViewAnimations {
+    static let prompt: Animation = .spring(response: 0.4, dampingFraction: 0.6)
+  }
 }

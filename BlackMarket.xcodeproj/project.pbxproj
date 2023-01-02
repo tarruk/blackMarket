@@ -36,17 +36,22 @@
 		E57CCD35295642B1003FE6E4 /* AuthEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CCD34295642B1003FE6E4 /* AuthEndpoint.swift */; };
 		E57CCD3729564393003FE6E4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CCD3629564393003FE6E4 /* User.swift */; };
 		E57CCD39295644B1003FE6E4 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57CCD38295644B1003FE6E4 /* UserDataManager.swift */; };
+		E580EC9F295F433E00DEADC1 /* SignUpCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580EC9E295F433E00DEADC1 /* SignUpCardView.swift */; };
+		E580ECA3295F6B9500DEADC1 /* LoaderPresenterModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580ECA2295F6B9500DEADC1 /* LoaderPresenterModifier.swift */; };
+		E580ECA5295F6BB200DEADC1 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580ECA4295F6BB200DEADC1 /* LoaderView.swift */; };
 		E5914829295B83A800F6ED86 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5914828295B83A800F6ED86 /* GenericResponse.swift */; };
 		E5D46AF6294B4B9200E392F6 /* View+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D46AF5294B4B9200E392F6 /* View+extension.swift */; };
 		E5D551302959F94D00613ECC /* BMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5512F2959F94D00613ECC /* BMClient.swift */; };
 		E5E6968E295C758700CCE692 /* AuthServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E6968D295C758700CCE692 /* AuthServiceMock.swift */; };
 		E5E69692295C820200CCE692 /* DependencyValues+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E69691295C820200CCE692 /* DependencyValues+extension.swift */; };
+		E5E69694295CC25A00CCE692 /* PromptViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E69693295CC25A00CCE692 /* PromptViewModifier.swift */; };
 		E5E8867B2950915E0096F9FD /* BMTextFieldDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8867A2950915E0096F9FD /* BMTextFieldDomain.swift */; };
-		E5E8867E295091DF0096F9FD /* SignUpCardDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8867D295091DF0096F9FD /* SignUpCardDomain.swift */; };
+		E5E8867E295091DF0096F9FD /* SignUpDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8867D295091DF0096F9FD /* SignUpDomain.swift */; };
 		E5E886802950FF390096F9FD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8867F2950FF390096F9FD /* Constants.swift */; };
+		E5ED6BE5295E0AEA0099C3CC /* PromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ED6BE4295E0AEA0099C3CC /* PromptView.swift */; };
+		E5ED6BEA295E20C60099C3CC /* PromptModifierDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ED6BE9295E20C60099C3CC /* PromptModifierDomain.swift */; };
 		E5F7CCC0293FB0F0006382F2 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F7CCBF293FB0F0006382F2 /* Assets.swift */; };
 		E5F7CCC2293FB139006382F2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F7CCC1293FB139006382F2 /* SignUpView.swift */; };
-		E5F7CCC7293FB4EF006382F2 /* SignUpCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F7CCC6293FB4EF006382F2 /* SignUpCardView.swift */; };
 		E5F7CCCA293FB51D006382F2 /* BMTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F7CCC9293FB51D006382F2 /* BMTextFieldView.swift */; };
 		E5F7CCCD293FB643006382F2 /* Validatable+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F7CCCC293FB643006382F2 /* Validatable+String.swift */; };
 /* End PBXBuildFile section */
@@ -78,18 +83,23 @@
 		E57CCD34295642B1003FE6E4 /* AuthEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpoint.swift; sourceTree = "<group>"; };
 		E57CCD3629564393003FE6E4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E57CCD38295644B1003FE6E4 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
+		E580EC9E295F433E00DEADC1 /* SignUpCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCardView.swift; sourceTree = "<group>"; };
+		E580ECA2295F6B9500DEADC1 /* LoaderPresenterModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderPresenterModifier.swift; sourceTree = "<group>"; };
+		E580ECA4295F6BB200DEADC1 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		E5914824295B6EEC00F6ED86 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		E5914828295B83A800F6ED86 /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 		E5D46AF5294B4B9200E392F6 /* View+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extension.swift"; sourceTree = "<group>"; };
 		E5D5512F2959F94D00613ECC /* BMClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMClient.swift; sourceTree = "<group>"; };
 		E5E6968D295C758700CCE692 /* AuthServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceMock.swift; sourceTree = "<group>"; };
 		E5E69691295C820200CCE692 /* DependencyValues+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyValues+extension.swift"; sourceTree = "<group>"; };
+		E5E69693295CC25A00CCE692 /* PromptViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptViewModifier.swift; sourceTree = "<group>"; };
 		E5E8867A2950915E0096F9FD /* BMTextFieldDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMTextFieldDomain.swift; sourceTree = "<group>"; };
-		E5E8867D295091DF0096F9FD /* SignUpCardDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCardDomain.swift; sourceTree = "<group>"; };
+		E5E8867D295091DF0096F9FD /* SignUpDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDomain.swift; sourceTree = "<group>"; };
 		E5E8867F2950FF390096F9FD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E5ED6BE4295E0AEA0099C3CC /* PromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptView.swift; sourceTree = "<group>"; };
+		E5ED6BE9295E20C60099C3CC /* PromptModifierDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptModifierDomain.swift; sourceTree = "<group>"; };
 		E5F7CCBF293FB0F0006382F2 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		E5F7CCC1293FB139006382F2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		E5F7CCC6293FB4EF006382F2 /* SignUpCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCardView.swift; sourceTree = "<group>"; };
 		E5F7CCC9293FB51D006382F2 /* BMTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMTextFieldView.swift; sourceTree = "<group>"; };
 		E5F7CCCC293FB643006382F2 /* Validatable+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Validatable+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,6 +239,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		E580ECA1295F6B6500DEADC1 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				E580ECA2295F6B9500DEADC1 /* LoaderPresenterModifier.swift */,
+				E580ECA4295F6BB200DEADC1 /* LoaderView.swift */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
 		E5E6968C295C756E00CCE692 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,10 +268,29 @@
 		E5E8867C295091B80096F9FD /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
+				E580ECA1295F6B6500DEADC1 /* Loader */,
+				E5ED6BE8295E20B80099C3CC /* PromptModifier */,
 				E51AA7CA2940C36000D13F1C /* ButtonViewModifier.swift */,
 				E5516D23294A701E0026D981 /* TextFieldModifiers.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		E5ED6BE3295E0ADF0099C3CC /* PromptView */ = {
+			isa = PBXGroup;
+			children = (
+				E5ED6BE4295E0AEA0099C3CC /* PromptView.swift */,
+			);
+			path = PromptView;
+			sourceTree = "<group>";
+		};
+		E5ED6BE8295E20B80099C3CC /* PromptModifier */ = {
+			isa = PBXGroup;
+			children = (
+				E5ED6BE9295E20C60099C3CC /* PromptModifierDomain.swift */,
+				E5E69693295CC25A00CCE692 /* PromptViewModifier.swift */,
+			);
+			path = PromptModifier;
 			sourceTree = "<group>";
 		};
 		E5F7CCBD293FAF9B006382F2 /* Resources */ = {
@@ -291,8 +329,8 @@
 			isa = PBXGroup;
 			children = (
 				E5F7CCC1293FB139006382F2 /* SignUpView.swift */,
-				E5E8867D295091DF0096F9FD /* SignUpCardDomain.swift */,
-				E5F7CCC6293FB4EF006382F2 /* SignUpCardView.swift */,
+				E5E8867D295091DF0096F9FD /* SignUpDomain.swift */,
+				E580EC9E295F433E00DEADC1 /* SignUpCardView.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -300,6 +338,7 @@
 		E5F7CCC8293FB508006382F2 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E5ED6BE3295E0ADF0099C3CC /* PromptView */,
 				E53508C5295247F4008C5887 /* Buttons */,
 				E53508BD2951F930008C5887 /* SecureTextFieldWithReveal */,
 				E5E886792950914C0096F9FD /* BMTextField */,
@@ -401,6 +440,7 @@
 				E57CCD39295644B1003FE6E4 /* UserDataManager.swift in Sources */,
 				E5E886802950FF390096F9FD /* Constants.swift in Sources */,
 				E57CCD35295642B1003FE6E4 /* AuthEndpoint.swift in Sources */,
+				E5ED6BE5295E0AEA0099C3CC /* PromptView.swift in Sources */,
 				E51AA7D32940CF3200D13F1C /* Colors.swift in Sources */,
 				E5E8867B2950915E0096F9FD /* BMTextFieldDomain.swift in Sources */,
 				E5E69692295C820200CCE692 /* DependencyValues+extension.swift in Sources */,
@@ -417,16 +457,20 @@
 				E5F7CCCA293FB51D006382F2 /* BMTextFieldView.swift in Sources */,
 				E53508C7295251D5008C5887 /* LogInCardDomain.swift in Sources */,
 				E53508BF2951F95A008C5887 /* SecureToggleTextFieldDomain.swift in Sources */,
+				E5E69694295CC25A00CCE692 /* PromptViewModifier.swift in Sources */,
 				E57BCF4A295340B70089B88A /* LogInCardView.swift in Sources */,
 				E53508C2295211B7008C5887 /* LogInView.swift in Sources */,
 				E50E7568293F83F90021722B /* BlackMarketApp.swift in Sources */,
-				E5F7CCC7293FB4EF006382F2 /* SignUpCardView.swift in Sources */,
 				E5F7CCC0293FB0F0006382F2 /* Assets.swift in Sources */,
+				E5ED6BEA295E20C60099C3CC /* PromptModifierDomain.swift in Sources */,
 				E5E6968E295C758700CCE692 /* AuthServiceMock.swift in Sources */,
 				E51AA7D12940C93500D13F1C /* UIConstants.swift in Sources */,
+				E580ECA5295F6BB200DEADC1 /* LoaderView.swift in Sources */,
 				E57CCD2D29563FFB003FE6E4 /* Dictionary+extension.swift in Sources */,
 				E51AA7C82940BF7C00D13F1C /* SecureToggleTextFieldView.swift in Sources */,
-				E5E8867E295091DF0096F9FD /* SignUpCardDomain.swift in Sources */,
+				E580EC9F295F433E00DEADC1 /* SignUpCardView.swift in Sources */,
+				E580ECA3295F6B9500DEADC1 /* LoaderPresenterModifier.swift in Sources */,
+				E5E8867E295091DF0096F9FD /* SignUpDomain.swift in Sources */,
 				E5914829295B83A800F6ED86 /* GenericResponse.swift in Sources */,
 				E5F7CCCD293FB643006382F2 /* Validatable+String.swift in Sources */,
 				E51AA7DC29410F2B00D13F1C /* String+extension.swift in Sources */,

@@ -7,14 +7,19 @@
 
 import Foundation
 import RSSwiftNetworking
+import ComposableArchitecture
+
+enum AuthResult {
+  case signUp(TaskResult<String>)
+}
 
 protocol AuthServiceProtocol {
-  func signIn(
+  func signUp(
     username: String,
     email: String,
     password: String,
     passwordConfirmation: String
-  ) async -> Result<String, Error>
+  ) async throws -> String
 }
 
 final class AuthService: BMClient, AuthServiceProtocol {
@@ -34,12 +39,12 @@ final class AuthService: BMClient, AuthServiceProtocol {
     self.userDataManager = userDataManager
   }
   
-  func signIn(
+  func signUp(
     username: String,
     email: String,
     password: String,
     passwordConfirmation: String
-  ) async -> Result<String, Error> {
+  ) async throws -> String {
     let response: RequestResponse<GenericResponse> = await apiClient.request(
       endpoint: AuthEndpoint.signIn(
         email: email,
@@ -51,11 +56,11 @@ final class AuthService: BMClient, AuthServiceProtocol {
     switch response.result {
     case .success(let response):
       guard let detail = response?.detail else {
-        return .failure(AuthError.userSessionInvalid)
+        throw AuthError.userSessionInvalid
       }
-      return .success(detail)
+      return detail
     case .failure(let error):
-      return .failure(error)
+      throw error
     }
   }
   

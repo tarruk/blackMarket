@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct BlackMarketApp: App {
     var body: some Scene {
       WindowGroup {
-          SignUpView()
+        SignUpView(store: Store(initialState: SignUpDomain.State(), reducer: SignUpDomain()))
       }
     }
 }

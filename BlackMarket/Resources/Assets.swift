@@ -13,7 +13,9 @@ extension Image {
   static let logo = Image("bm-logo")
   static let eyeSlash = Image(systemName: "eye.slash.fill")
   static let eye = Image(systemName: "eye.fill")
-  
+  static let error = Image(systemName: "xmark.circle.fill")
+  static let warning = Image(systemName: "exclamationmark.circle.fill")
+  static let success = Image(systemName: "checkmark.circle.fill")
   static func eye(slashed: Bool) -> Image {
     return slashed ? Self.eyeSlash : Self.eye
   }

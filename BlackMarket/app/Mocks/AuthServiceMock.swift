@@ -17,13 +17,13 @@ final class AuthServiceMock: BMClient, AuthServiceProtocol {
   
   init() { }
   
-  func signIn(
+  func signUp(
     username: String,
     email: String,
     password: String,
     passwordConfirmation: String
-  ) async -> Result<String, Error> {
-    return .success("")
+  ) async throws -> String {
+    return ""
   }
 }
 

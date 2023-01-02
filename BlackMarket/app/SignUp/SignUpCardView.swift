@@ -2,16 +2,14 @@
 //  SignUpCardView.swift
 //  BlackMarket
 //
-//  Created by Tarek Radovan on 06/12/2022.
+//  Created by Tarek Radovan on 30/12/2022.
 //
 
 import SwiftUI
 import ComposableArchitecture
 
 struct SignUpCardView: View {
-
-  private let authService = AuthService()
-  let store: StoreOf<SignUpCardDomain>
+  let store: StoreOf<SignUpDomain>
   
   var body: some View {
     WithViewStore(store, observe: { $0 }) { viewStore in
@@ -22,19 +20,19 @@ struct SignUpCardView: View {
           BMTextFieldView(
             store: store.scope(
               state: \.emailState,
-              action: SignUpCardDomain.Action.emailChanged
+              action: SignUpDomain.Action.emailChanged
             )
           )
           BMTextFieldView(
             store: store.scope(
               state: \.nameState,
-              action: SignUpCardDomain.Action.nameChanged
+              action: SignUpDomain.Action.nameChanged
             )
           )
           BMTextFieldView(
             store: store.scope(
               state: \.passwordState,
-              action: SignUpCardDomain.Action.passwordChanged
+              action: SignUpDomain.Action.passwordChanged
             )
           )
           BMButton(
@@ -42,7 +40,7 @@ struct SignUpCardView: View {
             style: .primary,
             disabled: !viewStore.canSignUp
           ) {
-            viewStore.send(.signIn(
+            viewStore.send(.signUp(
               email: viewStore.emailState.text,
               password: viewStore.passwordState.text,
               confirmedPassword: viewStore.passwordState.text
@@ -75,8 +73,8 @@ struct SignUpCardView: View {
           .padding(.top, UI.Padding.small)
         }.padding()
       }
-        .background(.white)
-        .cornerRadius(UI.CornerRadius.medium)
+      .background(.white)
+      .cornerRadius(UI.CornerRadius.medium)
     }
   }
 }
@@ -93,11 +91,10 @@ private extension LocalizedString {
 
 struct SignUpCardView_Previews: PreviewProvider {
     static var previews: some View {
-      
       SignUpCardView(
-        store: StoreOf<SignUpCardDomain>(
-          initialState: SignUpCardDomain.State(),
-          reducer: SignUpCardDomain()
+        store: Store(
+          initialState: SignUpDomain.State(),
+          reducer: SignUpDomain()
         )
       )
     }
