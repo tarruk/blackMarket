@@ -10,33 +10,38 @@ import ComposableArchitecture
 
 struct SignUpView: View {
   
+  let store: StoreOf<SignUpDomain>
+
   var body: some View {
-    GeometryReader { reader in
-      ZStack {
-        Image.background
-          .ignoresSafeArea()
-        SignUpCardView(
-          store: Store(
-            initialState: SignUpCardDomain.State(),
-            reducer: SignUpCardDomain()
+    WithViewStore(store) { viewStore in
+      GeometryReader { reader in
+        ZStack {
+          Image.background
+            .ignoresSafeArea()
+          SignUpCardView(store: store)
+            .frame(
+              maxWidth: .infinity,
+              maxHeight: reader.size.height * UI.ScaleFactor.large,
+              alignment: .center
+            )
+            .padding(UI.Padding.large)
+        }.position(
+          x: reader.frame(in: .local).midX,
+          y: reader.frame(in: .local).midY
+        ).showPrompt(store:
+          store.scope(
+            state: \.promptState,
+            action: SignUpDomain.Action.presentPrompt
           )
         )
-        .frame(
-          maxWidth: .infinity,
-          maxHeight: reader.size.height * UI.ScaleFactor.large,
-          alignment: .center
-        )
-        .padding(UI.Padding.large)
-      }.position(
-        x: reader.frame(in: .local).midX,
-        y: reader.frame(in: .local).midY
-      )
+        .showLoader(viewStore.isLoading)
+      }
     }
   }
 }
 
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-      SignUpView()
+      SignUpView(store: Store(initialState: SignUpDomain.State(), reducer: SignUpDomain()))
     }
 }

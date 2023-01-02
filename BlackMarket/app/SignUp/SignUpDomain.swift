@@ -8,10 +8,15 @@
 import Foundation
 import ComposableArchitecture
 
-struct SignUpCardDomain: ReducerProtocol {
+struct SignUpDomain: ReducerProtocol {
   
   struct State: Equatable {
-    
+    var promptState = PromptModifierDomain.State(
+      message: "",
+      style: .warning,
+      showPrompt: false
+    )
+    var isLoading: Bool = false
     var nameState = BMTextFieldDomain.State(
       validations: [.nonEmpty],
       placeholder: LocalizedString.Auth.nameTextfieldPlaceholder,
@@ -36,7 +41,6 @@ struct SignUpCardDomain: ReducerProtocol {
       title: LocalizedString.Auth.passwordTextfieldTitle,
       isSecure: true
     )
-    
     var dataPolicyLink: AttributedString = LocalizedString.SignUpCardDomain.dataPolicy.transformToLink(
       withURL: Constants.Path.dataPolicy
     ) ?? ""
@@ -54,15 +58,17 @@ struct SignUpCardDomain: ReducerProtocol {
   @Dependency(\.authService) var authService
   
   enum Action {
+    case binding(BindingAction<State>)
     case nameChanged(BMTextFieldDomain.Action)
     case emailChanged(BMTextFieldDomain.Action)
     case passwordChanged(BMTextFieldDomain.Action)
     case registerUser
     case showPolicy
     case presentLogIn
-    case showCookiesPolicy
-    case showPrompt
-    case signIn(email: String, password: String, confirmedPassword: String)
+    case showCookies
+    case presentPrompt(PromptModifierDomain.Action)
+    case receiveAuthResult(AuthResult)
+    case signUp(email: String, password: String, confirmedPassword: String)
   }
   
   var body: some ReducerProtocol<State, Action> {
@@ -77,23 +83,47 @@ struct SignUpCardDomain: ReducerProtocol {
       BMTextFieldDomain()
     }
     
+    Scope(state: \.promptState, action: /Action.presentPrompt) {
+      PromptModifierDomain()
+    }
+    
     Reduce { state, action in
       switch action {
-      case .signIn(let email, let password, let confirmPassword):
+      case .signUp(let email, let password, let confirmPassword):
+        state.isLoading = true
         return .task {
-         let response = await authService.signIn(
-            username: "",
-            email: email,
-            password: password,
-            passwordConfirmation: confirmPassword
+          return await .receiveAuthResult(.signUp(TaskResult { try await
+            authService.signUp(
+               username: "",
+               email: email,
+               password: password,
+               passwordConfirmation: confirmPassword
+            )
+          }))
+        }
+      case .presentPrompt(let promptAction):
+        state.isLoading = false
+        switch promptAction {
+        case .showPrompt(let message, let style, let show):
+          state.promptState = PromptModifierDomain.State(
+            message: message,
+            style: style,
+            showPrompt: show
           )
-          switch response {
-          case .success:
-            // TODO: Show prompt of success
-            return .showPrompt
-          case .failure:
-            // TODO: Sho prompt of error
-            return .showPrompt
+          return .none
+        default: return .none
+        }
+      case .receiveAuthResult(let result):
+        state.isLoading = false
+        switch result {
+        case .signUp(.success(let message)):
+          return .task {
+            Action.presentPrompt(.showPrompt(message: message, style: .success, show: true))
+          }
+        case .signUp(.failure(let error)):
+          return .task {
+            // TODO: Add Error handling
+            Action.presentPrompt(.showPrompt(message: error.localizedDescription, style: .error, show: true))
           }
         }
       default:
