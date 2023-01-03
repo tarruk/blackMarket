@@ -49,10 +49,7 @@ struct SignUpCardView: View {
           .padding(.top)
           Spacer()
           HStack {
-            Text(LocalizedString.SignUpCardView.policyDisclaimerFirstPart) +
-            Text("\(.init(viewStore.dataPolicyLink))") +
-            Text(LocalizedString.SignUpCardView.policyDisclaimerSecondPart) +
-            Text("\(.init(viewStore.cookiesPolicyLink))")
+            Text(viewStore.policyText)
           }
           .frame(maxWidth: .infinity, alignment: .center)
           .multilineTextAlignment(.center)
@@ -82,8 +79,7 @@ struct SignUpCardView: View {
 private extension LocalizedString {
   enum SignUpCardView {
     static let signupButtonTitle = "SIGNUP_BUTTON_TITLE".localized
-    static let policyDisclaimerFirstPart = "POLICY_DISCLAIMER_1".localized
-    static let policyDisclaimerSecondPart = "POLICY_DISCLAIMER_2".localized
+    static let policyDisclaimer = "POLICY_DISCLAIMER".localized
     static let loginButtonTitle = "LOGIN_BUTTON_TITLE".localized
     static let alreadyHaveAccountTitle = "ALREADY_HAVE_ACCOUNT_TITLE".localized
   }

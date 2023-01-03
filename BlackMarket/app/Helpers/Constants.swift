@@ -10,7 +10,7 @@ import Foundation
 struct Constants {
   enum Path {
     static let dataPolicy = "https://google.com"
-    static let cookiesPolicy = "https://google.com"
+    static let cookiesPolicy = "https://facebook.com"
   }
   enum Auth {
     static let minimumPasswordLength: Int = 8
