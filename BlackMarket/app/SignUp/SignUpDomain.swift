@@ -41,13 +41,19 @@ struct SignUpDomain: ReducerProtocol {
       title: LocalizedString.Auth.passwordTextfieldTitle,
       isSecure: true
     )
-    var dataPolicyLink: AttributedString = LocalizedString.SignUpCardDomain.dataPolicy.transformToLink(
-      withURL: Constants.Path.dataPolicy
-    ) ?? ""
-    var cookiesPolicyLink: AttributedString =  LocalizedString.SignUpCardDomain.cookiesPolicy.transformToLink(
-      withURL: Constants.Path.cookiesPolicy
-    ) ?? ""
-    
+    var policyText: AttributedString {
+      let rawString = String(
+        format: LocalizedString.SignUpCardDomain.policyDisclaimer,
+        "\(LocalizedString.SignUpCardDomain.dataPolicy)(\(Constants.Path.dataPolicy))",
+        "\(LocalizedString.SignUpCardDomain.cookiesPolicy)(\(Constants.Path.cookiesPolicy))"
+      )
+      do {
+        return try AttributedString(markdown: rawString)
+      } catch {
+        return ""
+      }
+    }
+
     var canSignUp: Bool {
       return emailState.isValid
       && nameState.isValid
@@ -137,8 +143,7 @@ private extension LocalizedString {
   enum SignUpCardDomain {
     static let dataPolicy = "DATA_POLICY".localized
     static let cookiesPolicy = "COOKIES_POLICY".localized
-    static let policyDisclaimerFirstPart = "POLICY_DISCLAIMER_1".localized
-    static let policyDisclaimerSecondPart = "POLICY_DISCLAIMER_2".localized
+    static let policyDisclaimer = "POLICY_DISCLAIMER".localized
     static let alreadyHaveAccountTitle = "ALREADY_HAVE_ACCOUNT_TITLE".localized
   }
 }
