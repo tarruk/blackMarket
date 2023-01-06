@@ -1,5 +1,5 @@
 //
-//  LogInCardDomain.swift
+//  LogInDomain.swift
 //  BlackMarket
 //
 //  Created by Tarek Radovan on 20/12/2022.
@@ -8,7 +8,7 @@
 import Foundation
 import ComposableArchitecture
 
-struct LogInCardDomain: ReducerProtocol {
+struct LogInDomain: ReducerProtocol {
   
   struct State: Equatable {
     
@@ -18,12 +18,13 @@ struct LogInCardDomain: ReducerProtocol {
       errorMessage: LocalizedString.Auth.emailTextfieldError,
       title: LocalizedString.Auth.emailTextfieldTitle
     )
+    var isLoading: Bool = false
     var passwordState = BMTextFieldDomain.State(
       validations: [
         .custom(isValid: { value in
           value.count >= Constants.Auth.minimumPasswordLength
         })
-        , .nonEmpty
+        ,
       ],
       placeholder: LocalizedString.Auth.passwordTextfieldPlaceholder,
       errorMessage: LocalizedString.Auth.passwordTextfieldError,
@@ -35,13 +36,14 @@ struct LogInCardDomain: ReducerProtocol {
       return emailState.isValid && passwordState.isValid
     }
   }
-  
+
   enum Action {
+    case binding(BindingAction<State>)
     case emailChanged(BMTextFieldDomain.Action)
     case passwordChanged(BMTextFieldDomain.Action)
-    case logIn
-    case presentSignUp
     case forgotMyPasswordTapped
+    case signupButtonTapped
+    case logIn(email: String, password: String)
   }
   
   var body: some ReducerProtocol<State, Action> {

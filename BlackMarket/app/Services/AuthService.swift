@@ -9,10 +9,6 @@ import Foundation
 import RSSwiftNetworking
 import ComposableArchitecture
 
-enum AuthResult {
-  case signUp(TaskResult<String>)
-}
-
 protocol AuthServiceProtocol {
   func signUp(
     username: String,
@@ -20,6 +16,8 @@ protocol AuthServiceProtocol {
     password: String,
     passwordConfirmation: String
   ) async throws -> String
+  
+  func logIn(email: String, password: String) async throws -> String
 }
 
 final class AuthService: BMClient, AuthServiceProtocol {
@@ -64,13 +62,45 @@ final class AuthService: BMClient, AuthServiceProtocol {
     }
   }
   
+  func logIn(email: String, password: String) async throws -> String {
+    let response: RequestResponse<UserResponse> = await apiClient.requestWithoutCookies(
+      endpoint: AuthEndpoint.logIn(
+        email: email,
+        password: password
+      )
+    )
+  
+    switch response.result {
+    case .success(let userResponse):
+      guard
+        let user = userResponse?.user,
+        let accessToken = userResponse?.accessToken,
+        let refreshToken = userResponse?.refreshToken,
+        saveUserSession(
+          user,
+          accessToken: accessToken,
+          refreshToken: refreshToken
+        ) else {
+        throw AuthError.userSessionInvalid
+      }
+      
+      return ""
+    case .failure(let error):
+      throw error
+    }
+  }
+  
+  
   private func saveUserSession(
     _ user: User?,
-    headers: [AnyHashable: Any]
+    accessToken: String,
+    refreshToken: String
   ) -> Bool {
     userDataManager.currentUser = user
-    sessionManager.currentSession = Session(headers: headers)
-    
+    sessionManager.currentSession = Session(
+      accessToken: accessToken,
+      refreshToken: refreshToken
+    )
     return userDataManager.currentUser != nil && sessionManager.isValidSession
   }
 }

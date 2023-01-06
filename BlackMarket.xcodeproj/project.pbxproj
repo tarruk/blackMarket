@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E507FB44296753CA006BDFA8 /* BMHTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507FB43296753CA006BDFA8 /* BMHTTPHeaders.swift */; };
 		E50E7568293F83F90021722B /* BlackMarketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50E7567293F83F90021722B /* BlackMarketApp.swift */; };
 		E50E756C293F83FA0021722B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E50E756B293F83FA0021722B /* Assets.xcassets */; };
 		E50E756F293F83FA0021722B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E50E756E293F83FA0021722B /* Preview Assets.xcassets */; };
@@ -19,9 +20,8 @@
 		E51AA7DC29410F2B00D13F1C /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51AA7DB29410F2B00D13F1C /* String+extension.swift */; };
 		E51AA7E0294112C700D13F1C /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51AA7DF294112C700D13F1C /* LocalizedString.swift */; };
 		E53508BF2951F95A008C5887 /* SecureToggleTextFieldDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53508BE2951F95A008C5887 /* SecureToggleTextFieldDomain.swift */; };
-		E53508C2295211B7008C5887 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53508C1295211B7008C5887 /* LogInView.swift */; };
 		E53508C42952453D008C5887 /* BMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53508C32952453D008C5887 /* BMButton.swift */; };
-		E53508C7295251D5008C5887 /* LogInCardDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53508C6295251D5008C5887 /* LogInCardDomain.swift */; };
+		E53508C7295251D5008C5887 /* LogInDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53508C6295251D5008C5887 /* LogInDomain.swift */; };
 		E5516D24294A701E0026D981 /* TextFieldModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5516D23294A701E0026D981 /* TextFieldModifiers.swift */; };
 		E569ACD02955F93600D9E39E /* RSSwiftNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = E569ACCF2955F93600D9E39E /* RSSwiftNetworking */; };
 		E569ACD22955F93600D9E39E /* RSSwiftNetworkingAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E569ACD12955F93600D9E39E /* RSSwiftNetworkingAlamofire */; };
@@ -40,23 +40,26 @@
 		E580ECA3295F6B9500DEADC1 /* LoaderPresenterModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580ECA2295F6B9500DEADC1 /* LoaderPresenterModifier.swift */; };
 		E580ECA5295F6BB200DEADC1 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580ECA4295F6BB200DEADC1 /* LoaderView.swift */; };
 		E5914829295B83A800F6ED86 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5914828295B83A800F6ED86 /* GenericResponse.swift */; };
+		E5CD404529684D6400F56653 /* APIClient+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CD404429684D6400F56653 /* APIClient+extension.swift */; };
 		E5D46AF6294B4B9200E392F6 /* View+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D46AF5294B4B9200E392F6 /* View+extension.swift */; };
 		E5D551302959F94D00613ECC /* BMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5512F2959F94D00613ECC /* BMClient.swift */; };
 		E5E6968E295C758700CCE692 /* AuthServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E6968D295C758700CCE692 /* AuthServiceMock.swift */; };
 		E5E69692295C820200CCE692 /* DependencyValues+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E69691295C820200CCE692 /* DependencyValues+extension.swift */; };
 		E5E69694295CC25A00CCE692 /* PromptViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E69693295CC25A00CCE692 /* PromptViewModifier.swift */; };
+		E5E840E02965B10B004D504E /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E840DF2965B10B004D504E /* AuthView.swift */; };
+		E5E840E22965B125004D504E /* AuthDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E840E12965B125004D504E /* AuthDomain.swift */; };
 		E5E8867B2950915E0096F9FD /* BMTextFieldDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8867A2950915E0096F9FD /* BMTextFieldDomain.swift */; };
 		E5E8867E295091DF0096F9FD /* SignUpDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8867D295091DF0096F9FD /* SignUpDomain.swift */; };
 		E5E886802950FF390096F9FD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8867F2950FF390096F9FD /* Constants.swift */; };
 		E5ED6BE5295E0AEA0099C3CC /* PromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ED6BE4295E0AEA0099C3CC /* PromptView.swift */; };
 		E5ED6BEA295E20C60099C3CC /* PromptModifierDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ED6BE9295E20C60099C3CC /* PromptModifierDomain.swift */; };
 		E5F7CCC0293FB0F0006382F2 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F7CCBF293FB0F0006382F2 /* Assets.swift */; };
-		E5F7CCC2293FB139006382F2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F7CCC1293FB139006382F2 /* SignUpView.swift */; };
 		E5F7CCCA293FB51D006382F2 /* BMTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F7CCC9293FB51D006382F2 /* BMTextFieldView.swift */; };
 		E5F7CCCD293FB643006382F2 /* Validatable+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F7CCCC293FB643006382F2 /* Validatable+String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E507FB43296753CA006BDFA8 /* BMHTTPHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMHTTPHeaders.swift; sourceTree = "<group>"; };
 		E50E7564293F83F90021722B /* BlackMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50E7567293F83F90021722B /* BlackMarketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackMarketApp.swift; sourceTree = "<group>"; };
 		E50E756B293F83FA0021722B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,9 +73,8 @@
 		E51AA7DB29410F2B00D13F1C /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		E51AA7DF294112C700D13F1C /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		E53508BE2951F95A008C5887 /* SecureToggleTextFieldDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureToggleTextFieldDomain.swift; sourceTree = "<group>"; };
-		E53508C1295211B7008C5887 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		E53508C32952453D008C5887 /* BMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMButton.swift; sourceTree = "<group>"; };
-		E53508C6295251D5008C5887 /* LogInCardDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCardDomain.swift; sourceTree = "<group>"; };
+		E53508C6295251D5008C5887 /* LogInDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInDomain.swift; sourceTree = "<group>"; };
 		E5516D23294A701E0026D981 /* TextFieldModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifiers.swift; sourceTree = "<group>"; };
 		E57BCF49295340B70089B88A /* LogInCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCardView.swift; sourceTree = "<group>"; };
 		E57CCD2729563EC0003FE6E4 /* SessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionProvider.swift; sourceTree = "<group>"; };
@@ -88,18 +90,20 @@
 		E580ECA4295F6BB200DEADC1 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		E5914824295B6EEC00F6ED86 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		E5914828295B83A800F6ED86 /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
+		E5CD404429684D6400F56653 /* APIClient+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+extension.swift"; sourceTree = "<group>"; };
 		E5D46AF5294B4B9200E392F6 /* View+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extension.swift"; sourceTree = "<group>"; };
 		E5D5512F2959F94D00613ECC /* BMClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMClient.swift; sourceTree = "<group>"; };
 		E5E6968D295C758700CCE692 /* AuthServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceMock.swift; sourceTree = "<group>"; };
 		E5E69691295C820200CCE692 /* DependencyValues+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyValues+extension.swift"; sourceTree = "<group>"; };
 		E5E69693295CC25A00CCE692 /* PromptViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptViewModifier.swift; sourceTree = "<group>"; };
+		E5E840DF2965B10B004D504E /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		E5E840E12965B125004D504E /* AuthDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDomain.swift; sourceTree = "<group>"; };
 		E5E8867A2950915E0096F9FD /* BMTextFieldDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMTextFieldDomain.swift; sourceTree = "<group>"; };
 		E5E8867D295091DF0096F9FD /* SignUpDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDomain.swift; sourceTree = "<group>"; };
 		E5E8867F2950FF390096F9FD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E5ED6BE4295E0AEA0099C3CC /* PromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptView.swift; sourceTree = "<group>"; };
 		E5ED6BE9295E20C60099C3CC /* PromptModifierDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptModifierDomain.swift; sourceTree = "<group>"; };
 		E5F7CCBF293FB0F0006382F2 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
-		E5F7CCC1293FB139006382F2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		E5F7CCC9293FB51D006382F2 /* BMTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMTextFieldView.swift; sourceTree = "<group>"; };
 		E5F7CCCC293FB643006382F2 /* Validatable+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Validatable+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,6 +175,7 @@
 				E5D46AF5294B4B9200E392F6 /* View+extension.swift */,
 				E57CCD2C29563FFB003FE6E4 /* Dictionary+extension.swift */,
 				E5E69691295C820200CCE692 /* DependencyValues+extension.swift */,
+				E5CD404429684D6400F56653 /* APIClient+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -187,8 +192,7 @@
 		E53508C0295211A4008C5887 /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
-				E53508C1295211B7008C5887 /* LogInView.swift */,
-				E53508C6295251D5008C5887 /* LogInCardDomain.swift */,
+				E53508C6295251D5008C5887 /* LogInDomain.swift */,
 				E57BCF49295340B70089B88A /* LogInCardView.swift */,
 			);
 			path = LogIn;
@@ -206,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				E57CCD2729563EC0003FE6E4 /* SessionProvider.swift */,
+				E507FB43296753CA006BDFA8 /* BMHTTPHeaders.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -254,6 +259,25 @@
 				E5E6968D295C758700CCE692 /* AuthServiceMock.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		E5E840DD2965B0E9004D504E /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				E5E840DE2965B0FA004D504E /* Auth */,
+				E5F7CCC5293FB4D9006382F2 /* SignUp */,
+				E53508C0295211A4008C5887 /* LogIn */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		E5E840DE2965B0FA004D504E /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				E5E840DF2965B10B004D504E /* AuthView.swift */,
+				E5E840E12965B125004D504E /* AuthDomain.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		E5E886792950914C0096F9FD /* BMTextField */ = {
@@ -318,8 +342,7 @@
 				E51AA7CF2940C92C00D13F1C /* Helpers */,
 				E5F7CCCB293FB634006382F2 /* Protocols */,
 				E5F7CCC8293FB508006382F2 /* Components */,
-				E5F7CCC5293FB4D9006382F2 /* SignUp */,
-				E53508C0295211A4008C5887 /* LogIn */,
+				E5E840DD2965B0E9004D504E /* Screens */,
 				E50E7567293F83F90021722B /* BlackMarketApp.swift */,
 			);
 			path = app;
@@ -328,7 +351,6 @@
 		E5F7CCC5293FB4D9006382F2 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				E5F7CCC1293FB139006382F2 /* SignUpView.swift */,
 				E5E8867D295091DF0096F9FD /* SignUpDomain.swift */,
 				E580EC9E295F433E00DEADC1 /* SignUpCardView.swift */,
 			);
@@ -436,30 +458,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5F7CCC2293FB139006382F2 /* SignUpView.swift in Sources */,
 				E57CCD39295644B1003FE6E4 /* UserDataManager.swift in Sources */,
 				E5E886802950FF390096F9FD /* Constants.swift in Sources */,
 				E57CCD35295642B1003FE6E4 /* AuthEndpoint.swift in Sources */,
 				E5ED6BE5295E0AEA0099C3CC /* PromptView.swift in Sources */,
 				E51AA7D32940CF3200D13F1C /* Colors.swift in Sources */,
+				E5E840E22965B125004D504E /* AuthDomain.swift in Sources */,
 				E5E8867B2950915E0096F9FD /* BMTextFieldDomain.swift in Sources */,
 				E5E69692295C820200CCE692 /* DependencyValues+extension.swift in Sources */,
 				E5D551302959F94D00613ECC /* BMClient.swift in Sources */,
 				E53508C42952453D008C5887 /* BMButton.swift in Sources */,
 				E5D46AF6294B4B9200E392F6 /* View+extension.swift in Sources */,
 				E57CCD3729564393003FE6E4 /* User.swift in Sources */,
+				E5CD404529684D6400F56653 /* APIClient+extension.swift in Sources */,
 				E57CCD2829563EC0003FE6E4 /* SessionProvider.swift in Sources */,
 				E51AA7CB2940C36000D13F1C /* ButtonViewModifier.swift in Sources */,
 				E5516D24294A701E0026D981 /* TextFieldModifiers.swift in Sources */,
 				E57CCD2B29563ED5003FE6E4 /* Session.swift in Sources */,
 				E57CCD3029564028003FE6E4 /* SessionManager.swift in Sources */,
+				E507FB44296753CA006BDFA8 /* BMHTTPHeaders.swift in Sources */,
 				E51AA7E0294112C700D13F1C /* LocalizedString.swift in Sources */,
 				E5F7CCCA293FB51D006382F2 /* BMTextFieldView.swift in Sources */,
-				E53508C7295251D5008C5887 /* LogInCardDomain.swift in Sources */,
+				E53508C7295251D5008C5887 /* LogInDomain.swift in Sources */,
 				E53508BF2951F95A008C5887 /* SecureToggleTextFieldDomain.swift in Sources */,
 				E5E69694295CC25A00CCE692 /* PromptViewModifier.swift in Sources */,
+				E5E840E02965B10B004D504E /* AuthView.swift in Sources */,
 				E57BCF4A295340B70089B88A /* LogInCardView.swift in Sources */,
-				E53508C2295211B7008C5887 /* LogInView.swift in Sources */,
 				E50E7568293F83F90021722B /* BlackMarketApp.swift in Sources */,
 				E5F7CCC0293FB0F0006382F2 /* Assets.swift in Sources */,
 				E5ED6BEA295E20C60099C3CC /* PromptModifierDomain.swift in Sources */,
