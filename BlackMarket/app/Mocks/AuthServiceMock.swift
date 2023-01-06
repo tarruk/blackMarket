@@ -25,5 +25,9 @@ final class AuthServiceMock: BMClient, AuthServiceProtocol {
   ) async throws -> String {
     return ""
   }
+  
+  func logIn(email: String, password: String) async throws -> String {
+    return ""
+  }
 }
 

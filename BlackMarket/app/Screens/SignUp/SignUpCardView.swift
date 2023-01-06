@@ -59,13 +59,13 @@ struct SignUpCardView: View {
           HStack {
             Text(LocalizedString.SignUpCardView.alreadyHaveAccountTitle)
             Button {
-              // TODO: Go to log in screen
+              viewStore.send(.loginButtonTapped, animation: .easeIn)
             } label: {
               Text(LocalizedString.SignUpCardView.loginButtonTitle)
                 .foregroundColor(.blue)
                 .font(.subheadline)
             }
-          }.disabled(!viewStore.canSignUp)
+          }
           .minimumScaleFactor(UI.ScaleFactor.large)
           .padding(.top, UI.Padding.small)
         }.padding()

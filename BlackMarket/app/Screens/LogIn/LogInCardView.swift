@@ -9,7 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct LogInCardView: View {
-  let store: StoreOf<LogInCardDomain>
+  let store: StoreOf<LogInDomain>
 
     var body: some View {
       WithViewStore(store, observe: { $0 }) { viewStore in
@@ -21,13 +21,13 @@ struct LogInCardView: View {
               BMTextFieldView(
                 store: store.scope(
                   state: \.emailState,
-                  action: LogInCardDomain.Action.emailChanged
+                  action: LogInDomain.Action.emailChanged
                 )
               )
               BMTextFieldView(
                 store: store.scope(
                   state: \.passwordState,
-                  action: LogInCardDomain.Action.passwordChanged
+                  action: LogInDomain.Action.passwordChanged
                 )
               )
               BMButton(
@@ -35,7 +35,10 @@ struct LogInCardView: View {
                 style: .primary,
                 disabled: !viewStore.canLogin
               ) {
-                  // Log in
+                viewStore.send(.logIn(
+                  email: viewStore.emailState.text,
+                  password: viewStore.passwordState.text
+                ))
                 }
               Button {
                 // Forgot my password action
@@ -56,7 +59,7 @@ struct LogInCardView: View {
               title: LocalizedString.Auth.signupButtonTitle,
               style: .secundary
             ) {
-                // Go to sign up screen
+              viewStore.send(.signupButtonTapped, animation: .easeIn)
               }
           }
           .padding()
@@ -71,8 +74,8 @@ struct LogInCardView: View {
 struct LogInCardView_Previews: PreviewProvider {
     static var previews: some View {
       LogInCardView(store: Store(
-        initialState: LogInCardDomain.State(),
-        reducer: LogInCardDomain()
+        initialState: LogInDomain.State(),
+        reducer: LogInDomain()
       ))
     }
 }

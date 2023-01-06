@@ -10,14 +10,14 @@ import RSSwiftNetworking
 
 enum AuthEndpoint: RailsAPIEndpoint {
   case signIn(email: String, password: String, passwordConfirmation: String)
-  case logIn
+  case logIn(email: String, password: String)
   
   var path: String {
     switch self {
     case .signIn:
       return "/dj-rest-auth/registration/"
     case .logIn:
-      return ""
+      return "/dj-rest-auth/login/"
     }
   }
   
@@ -29,8 +29,11 @@ enum AuthEndpoint: RailsAPIEndpoint {
         "password1": password,
         "password2": passwordConfirmation
       ]
-    case .logIn:
-      return [:]
+    case .logIn(let email, let password):
+      return [
+        "email": email,
+        "password": password
+      ]
     }
   }
   

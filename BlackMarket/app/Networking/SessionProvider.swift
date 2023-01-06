@@ -8,22 +8,17 @@
 import Foundation
 import RSSwiftNetworking
 
+public protocol BMSessionProvider {
+  var accessToken: String? { get }
+}
+
 internal protocol CurrentUserSessionProvider {
   var currentSession: Session? { get }
 }
 
-internal class SessionHeadersProvider: SessionProvider {
+internal class SessionHeadersProvider: BMSessionProvider {
 
   // MARK: - Properties
-
-  var uid: String? {
-    session?.uid
-  }
-
-  var client: String? {
-    session?.client
-  }
-
   var accessToken: String? {
     session?.accessToken
   }

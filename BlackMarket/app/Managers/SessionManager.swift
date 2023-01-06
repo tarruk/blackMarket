@@ -30,26 +30,21 @@ final class SessionDataManager: CurrentUserSessionProvider {
   var sessionHeaders: [String: String] {
     guard
       let session = currentSession,
-      let client = session.client,
-      let accessToken = session.accessToken,
-      let uid = session.uid else {
-        return [:]
+      let accessToken = session.accessToken
+    else {
+      return [:]
     }
     return [
-      HTTPHeader.client.rawValue: client,
-      HTTPHeader.token.rawValue: accessToken,
-      HTTPHeader.uid.rawValue: uid,
-      HTTPHeader.contentType.rawValue: "application/json"
+      BMHTTPHeader.contentType.rawValue: "application/json",
+      BMHTTPHeader.authorization.rawValue: "Bearer \(accessToken)"
     ]
   }
   
   var isValidSession: Bool {
     if
       let session = currentSession,
-      let uid = session.uid,
-      let accessToken = session.accessToken,
-      let client = session.client {
-      return !uid.isEmpty && !accessToken.isEmpty && !client.isEmpty
+      let accessToken = session.accessToken {
+      return !accessToken.isEmpty
     }
     return false
   }
