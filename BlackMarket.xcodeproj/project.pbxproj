@@ -19,6 +19,9 @@
 		E51AA7D929410F0300D13F1C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E51AA7D829410F0300D13F1C /* Localizable.strings */; };
 		E51AA7DC29410F2B00D13F1C /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51AA7DB29410F2B00D13F1C /* String+extension.swift */; };
 		E51AA7E0294112C700D13F1C /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51AA7DF294112C700D13F1C /* LocalizedString.swift */; };
+		E5210A74296C934200AA4AFA /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5210A73296C934200AA4AFA /* SearchBarView.swift */; };
+		E5210A76296CA2CD00AA4AFA /* SearchBarDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5210A75296CA2CD00AA4AFA /* SearchBarDomain.swift */; };
+		E5210A78296CAF4D00AA4AFA /* DashboardDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5210A77296CAF4D00AA4AFA /* DashboardDomain.swift */; };
 		E53508BF2951F95A008C5887 /* SecureToggleTextFieldDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53508BE2951F95A008C5887 /* SecureToggleTextFieldDomain.swift */; };
 		E53508C42952453D008C5887 /* BMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53508C32952453D008C5887 /* BMButton.swift */; };
 		E53508C7295251D5008C5887 /* LogInDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53508C6295251D5008C5887 /* LogInDomain.swift */; };
@@ -77,6 +80,9 @@
 		E51AA7D829410F0300D13F1C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		E51AA7DB29410F2B00D13F1C /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		E51AA7DF294112C700D13F1C /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
+		E5210A73296C934200AA4AFA /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		E5210A75296CA2CD00AA4AFA /* SearchBarDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarDomain.swift; sourceTree = "<group>"; };
+		E5210A77296CAF4D00AA4AFA /* DashboardDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDomain.swift; sourceTree = "<group>"; };
 		E53508BE2951F95A008C5887 /* SecureToggleTextFieldDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureToggleTextFieldDomain.swift; sourceTree = "<group>"; };
 		E53508C32952453D008C5887 /* BMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMButton.swift; sourceTree = "<group>"; };
 		E53508C6295251D5008C5887 /* LogInDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInDomain.swift; sourceTree = "<group>"; };
@@ -190,6 +196,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E5210A72296C933200AA4AFA /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				E5210A73296C934200AA4AFA /* SearchBarView.swift */,
+				E5210A75296CA2CD00AA4AFA /* SearchBarDomain.swift */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
 		E53508BD2951F930008C5887 /* SecureTextFieldWithReveal */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +291,7 @@
 			children = (
 				E5E7D9A9296C5E3900BB196F /* Components */,
 				E5E7D9A7296C5E2C00BB196F /* DashboardView.swift */,
+				E5210A77296CAF4D00AA4AFA /* DashboardDomain.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -283,6 +299,7 @@
 		E5E7D9A9296C5E3900BB196F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E5210A72296C933200AA4AFA /* SearchBar */,
 				E5E7D9B1296C6CFD00BB196F /* DashboardBar */,
 				E5E7D9AE296C67EC00BB196F /* DashboardBarButton */,
 			);
@@ -512,6 +529,7 @@
 				E5E7D9AD296C63DD00BB196F /* DashboardButtonView.swift in Sources */,
 				E5ED6BE5295E0AEA0099C3CC /* PromptView.swift in Sources */,
 				E5E7D9B3296C6D0B00BB196F /* DashboardBarDomain.swift in Sources */,
+				E5210A74296C934200AA4AFA /* SearchBarView.swift in Sources */,
 				E51AA7D32940CF3200D13F1C /* Colors.swift in Sources */,
 				E5E840E22965B125004D504E /* AuthDomain.swift in Sources */,
 				E5E7D9AB296C5E4D00BB196F /* DashboardBarView.swift in Sources */,
@@ -523,6 +541,8 @@
 				E57CCD3729564393003FE6E4 /* User.swift in Sources */,
 				E5CD404529684D6400F56653 /* APIClient+extension.swift in Sources */,
 				E57CCD2829563EC0003FE6E4 /* SessionProvider.swift in Sources */,
+				E5210A78296CAF4D00AA4AFA /* DashboardDomain.swift in Sources */,
+				E5210A76296CA2CD00AA4AFA /* SearchBarDomain.swift in Sources */,
 				E51AA7CB2940C36000D13F1C /* ButtonViewModifier.swift in Sources */,
 				E5516D24294A701E0026D981 /* TextFieldModifiers.swift in Sources */,
 				E57CCD2B29563ED5003FE6E4 /* Session.swift in Sources */,

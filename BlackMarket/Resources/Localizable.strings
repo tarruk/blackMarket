@@ -25,3 +25,6 @@
 // MARK: LogInCardView
 "FORGOT_PASWORD_BUTTON_TITLE" = "I forgot my password";
 "DONT_HAVE_ACCOUNT_TITLE" = "Don't have an account?";
+
+// MARK: Dashboard
+"SEARCHBAR_PLACEHOLDER" = "Search for products";
