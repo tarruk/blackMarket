@@ -18,6 +18,7 @@ extension Image {
   static let success = Image(systemName: "checkmark.circle.fill")
   static let shoppingCart = Image("shopping-cart")
   static let menu = Image("menu")
+  static let search = Image(systemName: "magnifyingglass")
   static func eye(slashed: Bool) -> Image {
     return slashed ? Self.eyeSlash : Self.eye
   }

@@ -9,19 +9,36 @@ import SwiftUI
 import ComposableArchitecture
 
 struct DashboardView: View {
-    var body: some View {
-      VStack {
-        DashboardBarView(store: Store(
-          initialState: DashboardBarDomain.State(),
-          reducer: DashboardBarDomain()
-        ))
+  let store: StoreOf<DashboardDomain>
+  
+  var body: some View {
+    WithViewStore(store) { viewStore in
+      VStack(spacing: .zero) {
+        DashboardBarView(
+          store: store.scope(
+            state: \.dashboardBarState,
+            action: DashboardDomain.Action.dashboardBarAction
+          )
+        )
+        SearchBarView(
+          store: store.scope(
+            state: \.searchBarState,
+            action: DashboardDomain.Action.searchBarAction
+          )
+        )
         Spacer()
       }
     }
+  }
 }
 
 struct DashboardView_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardView()
+      DashboardView(
+        store: Store(
+          initialState: DashboardDomain.State(),
+          reducer: DashboardDomain()
+        )
+      )
     }
 }
