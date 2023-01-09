@@ -11,6 +11,7 @@ import SwiftUI
 struct UI {
   
   enum CornerRadius {
+    static let verySmall: CGFloat = 2
     static let small: CGFloat = 5
     static let medium: CGFloat = 10
     static let large: CGFloat = 20

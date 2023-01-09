@@ -16,6 +16,8 @@ extension Image {
   static let error = Image(systemName: "xmark.circle.fill")
   static let warning = Image(systemName: "exclamationmark.circle.fill")
   static let success = Image(systemName: "checkmark.circle.fill")
+  static let shoppingCart = Image("shopping-cart")
+  static let menu = Image("menu")
   static func eye(slashed: Bool) -> Image {
     return slashed ? Self.eyeSlash : Self.eye
   }
