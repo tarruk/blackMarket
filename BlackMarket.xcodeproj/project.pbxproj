@@ -46,6 +46,11 @@
 		E5E6968E295C758700CCE692 /* AuthServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E6968D295C758700CCE692 /* AuthServiceMock.swift */; };
 		E5E69692295C820200CCE692 /* DependencyValues+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E69691295C820200CCE692 /* DependencyValues+extension.swift */; };
 		E5E69694295CC25A00CCE692 /* PromptViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E69693295CC25A00CCE692 /* PromptViewModifier.swift */; };
+		E5E7D9A8296C5E2C00BB196F /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7D9A7296C5E2C00BB196F /* DashboardView.swift */; };
+		E5E7D9AB296C5E4D00BB196F /* DashboardBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7D9AA296C5E4D00BB196F /* DashboardBarView.swift */; };
+		E5E7D9AD296C63DD00BB196F /* DashboardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7D9AC296C63DD00BB196F /* DashboardButtonView.swift */; };
+		E5E7D9B0296C67FD00BB196F /* DashboardButtonDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7D9AF296C67FD00BB196F /* DashboardButtonDomain.swift */; };
+		E5E7D9B3296C6D0B00BB196F /* DashboardBarDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7D9B2296C6D0B00BB196F /* DashboardBarDomain.swift */; };
 		E5E840E02965B10B004D504E /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E840DF2965B10B004D504E /* AuthView.swift */; };
 		E5E840E22965B125004D504E /* AuthDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E840E12965B125004D504E /* AuthDomain.swift */; };
 		E5E8867B2950915E0096F9FD /* BMTextFieldDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E8867A2950915E0096F9FD /* BMTextFieldDomain.swift */; };
@@ -96,6 +101,11 @@
 		E5E6968D295C758700CCE692 /* AuthServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceMock.swift; sourceTree = "<group>"; };
 		E5E69691295C820200CCE692 /* DependencyValues+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyValues+extension.swift"; sourceTree = "<group>"; };
 		E5E69693295CC25A00CCE692 /* PromptViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptViewModifier.swift; sourceTree = "<group>"; };
+		E5E7D9A7296C5E2C00BB196F /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		E5E7D9AA296C5E4D00BB196F /* DashboardBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardBarView.swift; sourceTree = "<group>"; };
+		E5E7D9AC296C63DD00BB196F /* DashboardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardButtonView.swift; sourceTree = "<group>"; };
+		E5E7D9AF296C67FD00BB196F /* DashboardButtonDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardButtonDomain.swift; sourceTree = "<group>"; };
+		E5E7D9B2296C6D0B00BB196F /* DashboardBarDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardBarDomain.swift; sourceTree = "<group>"; };
 		E5E840DF2965B10B004D504E /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		E5E840E12965B125004D504E /* AuthDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDomain.swift; sourceTree = "<group>"; };
 		E5E8867A2950915E0096F9FD /* BMTextFieldDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMTextFieldDomain.swift; sourceTree = "<group>"; };
@@ -261,9 +271,46 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		E5E7D9A6296C5E2000BB196F /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				E5E7D9A9296C5E3900BB196F /* Components */,
+				E5E7D9A7296C5E2C00BB196F /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		E5E7D9A9296C5E3900BB196F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E5E7D9B1296C6CFD00BB196F /* DashboardBar */,
+				E5E7D9AE296C67EC00BB196F /* DashboardBarButton */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E5E7D9AE296C67EC00BB196F /* DashboardBarButton */ = {
+			isa = PBXGroup;
+			children = (
+				E5E7D9AC296C63DD00BB196F /* DashboardButtonView.swift */,
+				E5E7D9AF296C67FD00BB196F /* DashboardButtonDomain.swift */,
+			);
+			path = DashboardBarButton;
+			sourceTree = "<group>";
+		};
+		E5E7D9B1296C6CFD00BB196F /* DashboardBar */ = {
+			isa = PBXGroup;
+			children = (
+				E5E7D9AA296C5E4D00BB196F /* DashboardBarView.swift */,
+				E5E7D9B2296C6D0B00BB196F /* DashboardBarDomain.swift */,
+			);
+			path = DashboardBar;
+			sourceTree = "<group>";
+		};
 		E5E840DD2965B0E9004D504E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E5E7D9A6296C5E2000BB196F /* Dashboard */,
 				E5E840DE2965B0FA004D504E /* Auth */,
 				E5F7CCC5293FB4D9006382F2 /* SignUp */,
 				E53508C0295211A4008C5887 /* LogIn */,
@@ -458,12 +505,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5E7D9B0296C67FD00BB196F /* DashboardButtonDomain.swift in Sources */,
 				E57CCD39295644B1003FE6E4 /* UserDataManager.swift in Sources */,
 				E5E886802950FF390096F9FD /* Constants.swift in Sources */,
 				E57CCD35295642B1003FE6E4 /* AuthEndpoint.swift in Sources */,
+				E5E7D9AD296C63DD00BB196F /* DashboardButtonView.swift in Sources */,
 				E5ED6BE5295E0AEA0099C3CC /* PromptView.swift in Sources */,
+				E5E7D9B3296C6D0B00BB196F /* DashboardBarDomain.swift in Sources */,
 				E51AA7D32940CF3200D13F1C /* Colors.swift in Sources */,
 				E5E840E22965B125004D504E /* AuthDomain.swift in Sources */,
+				E5E7D9AB296C5E4D00BB196F /* DashboardBarView.swift in Sources */,
 				E5E8867B2950915E0096F9FD /* BMTextFieldDomain.swift in Sources */,
 				E5E69692295C820200CCE692 /* DependencyValues+extension.swift in Sources */,
 				E5D551302959F94D00613ECC /* BMClient.swift in Sources */,
@@ -489,6 +540,7 @@
 				E5ED6BEA295E20C60099C3CC /* PromptModifierDomain.swift in Sources */,
 				E5E6968E295C758700CCE692 /* AuthServiceMock.swift in Sources */,
 				E51AA7D12940C93500D13F1C /* UIConstants.swift in Sources */,
+				E5E7D9A8296C5E2C00BB196F /* DashboardView.swift in Sources */,
 				E580ECA5295F6BB200DEADC1 /* LoaderView.swift in Sources */,
 				E57CCD2D29563FFB003FE6E4 /* Dictionary+extension.swift in Sources */,
 				E51AA7C82940BF7C00D13F1C /* SecureToggleTextFieldView.swift in Sources */,
