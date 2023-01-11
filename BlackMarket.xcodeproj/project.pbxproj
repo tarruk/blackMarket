@@ -22,6 +22,15 @@
 		E5210A74296C934200AA4AFA /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5210A73296C934200AA4AFA /* SearchBarView.swift */; };
 		E5210A76296CA2CD00AA4AFA /* SearchBarDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5210A75296CA2CD00AA4AFA /* SearchBarDomain.swift */; };
 		E5210A78296CAF4D00AA4AFA /* DashboardDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5210A77296CAF4D00AA4AFA /* DashboardDomain.swift */; };
+		E527D09E296EFBE200CF5444 /* PromoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E527D09D296EFBE200CF5444 /* PromoCardView.swift */; };
+		E527D0A0296F046600CF5444 /* PromoCardDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E527D09F296F046600CF5444 /* PromoCardDomain.swift */; };
+		E527D0A2296F0D1700CF5444 /* ScaleButtonEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = E527D0A1296F0D1700CF5444 /* ScaleButtonEffect.swift */; };
+		E527D0A5296F19EA00CF5444 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E527D0A4296F19EA00CF5444 /* PaymentView.swift */; };
+		E527D0AB296F253D00CF5444 /* PaymentDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E527D0AA296F253D00CF5444 /* PaymentDomain.swift */; };
+		E527D0AD296F25B600CF5444 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E527D0AC296F25B600CF5444 /* DividerView.swift */; };
+		E527D0B1296F357F00CF5444 /* PaymentMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E527D0B0296F357F00CF5444 /* PaymentMethodView.swift */; };
+		E527D0B3296F35AE00CF5444 /* PaymentMethodDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E527D0B2296F35AE00CF5444 /* PaymentMethodDomain.swift */; };
+		E527D0B5296F3F1F00CF5444 /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E527D0B4296F3F1F00CF5444 /* PaymentMethod.swift */; };
 		E53508BF2951F95A008C5887 /* SecureToggleTextFieldDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53508BE2951F95A008C5887 /* SecureToggleTextFieldDomain.swift */; };
 		E53508C42952453D008C5887 /* BMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53508C32952453D008C5887 /* BMButton.swift */; };
 		E53508C7295251D5008C5887 /* LogInDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53508C6295251D5008C5887 /* LogInDomain.swift */; };
@@ -90,6 +99,15 @@
 		E5210A73296C934200AA4AFA /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		E5210A75296CA2CD00AA4AFA /* SearchBarDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarDomain.swift; sourceTree = "<group>"; };
 		E5210A77296CAF4D00AA4AFA /* DashboardDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDomain.swift; sourceTree = "<group>"; };
+		E527D09D296EFBE200CF5444 /* PromoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCardView.swift; sourceTree = "<group>"; };
+		E527D09F296F046600CF5444 /* PromoCardDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCardDomain.swift; sourceTree = "<group>"; };
+		E527D0A1296F0D1700CF5444 /* ScaleButtonEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleButtonEffect.swift; sourceTree = "<group>"; };
+		E527D0A4296F19EA00CF5444 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+		E527D0AA296F253D00CF5444 /* PaymentDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentDomain.swift; sourceTree = "<group>"; };
+		E527D0AC296F25B600CF5444 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
+		E527D0B0296F357F00CF5444 /* PaymentMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodView.swift; sourceTree = "<group>"; };
+		E527D0B2296F35AE00CF5444 /* PaymentMethodDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodDomain.swift; sourceTree = "<group>"; };
+		E527D0B4296F3F1F00CF5444 /* PaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
 		E53508BE2951F95A008C5887 /* SecureToggleTextFieldDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureToggleTextFieldDomain.swift; sourceTree = "<group>"; };
 		E53508C32952453D008C5887 /* BMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMButton.swift; sourceTree = "<group>"; };
 		E53508C6295251D5008C5887 /* LogInDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInDomain.swift; sourceTree = "<group>"; };
@@ -219,6 +237,42 @@
 			path = SearchBar;
 			sourceTree = "<group>";
 		};
+		E527D09C296EFBD300CF5444 /* PromoCard */ = {
+			isa = PBXGroup;
+			children = (
+				E527D09D296EFBE200CF5444 /* PromoCardView.swift */,
+				E527D09F296F046600CF5444 /* PromoCardDomain.swift */,
+			);
+			path = PromoCard;
+			sourceTree = "<group>";
+		};
+		E527D0A3296F16D800CF5444 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				E527D0AE296F356A00CF5444 /* Components */,
+				E527D0A4296F19EA00CF5444 /* PaymentView.swift */,
+				E527D0AA296F253D00CF5444 /* PaymentDomain.swift */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		E527D0AE296F356A00CF5444 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E527D0AF296F357000CF5444 /* PaymentMethod */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E527D0AF296F357000CF5444 /* PaymentMethod */ = {
+			isa = PBXGroup;
+			children = (
+				E527D0B0296F357F00CF5444 /* PaymentMethodView.swift */,
+				E527D0B2296F35AE00CF5444 /* PaymentMethodDomain.swift */,
+			);
+			path = PaymentMethod;
+			sourceTree = "<group>";
+		};
 		E53508BD2951F930008C5887 /* SecureTextFieldWithReveal */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +316,7 @@
 				E5914828295B83A800F6ED86 /* GenericResponse.swift */,
 				E5CB6D98296DE6CF003F16BF /* Product.swift */,
 				E5CB6D9A296DE73F003F16BF /* ProductState.swift */,
+				E527D0B4296F3F1F00CF5444 /* PaymentMethod.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -335,6 +390,8 @@
 		E5E7D9A9296C5E3900BB196F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E527D0A3296F16D800CF5444 /* Payment */,
+				E527D09C296EFBD300CF5444 /* PromoCard */,
 				E5CB6D8D296DA1F8003F16BF /* Products */,
 				E5210A72296C933200AA4AFA /* SearchBar */,
 				E5E7D9B1296C6CFD00BB196F /* DashboardBar */,
@@ -397,6 +454,7 @@
 				E5ED6BE8295E20B80099C3CC /* PromptModifier */,
 				E51AA7CA2940C36000D13F1C /* ButtonViewModifier.swift */,
 				E5516D23294A701E0026D981 /* TextFieldModifiers.swift */,
+				E527D0A1296F0D1700CF5444 /* ScaleButtonEffect.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -465,6 +523,7 @@
 				E53508C5295247F4008C5887 /* Buttons */,
 				E53508BD2951F930008C5887 /* SecureTextFieldWithReveal */,
 				E5E886792950914C0096F9FD /* BMTextField */,
+				E527D0AC296F25B600CF5444 /* DividerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -562,19 +621,24 @@
 				E5E7D9B0296C67FD00BB196F /* DashboardButtonDomain.swift in Sources */,
 				E57CCD39295644B1003FE6E4 /* UserDataManager.swift in Sources */,
 				E5E886802950FF390096F9FD /* Constants.swift in Sources */,
+				E527D0A0296F046600CF5444 /* PromoCardDomain.swift in Sources */,
 				E57CCD35295642B1003FE6E4 /* AuthEndpoint.swift in Sources */,
 				E5E7D9AD296C63DD00BB196F /* DashboardButtonView.swift in Sources */,
+				E527D0AB296F253D00CF5444 /* PaymentDomain.swift in Sources */,
 				E5ED6BE5295E0AEA0099C3CC /* PromptView.swift in Sources */,
 				E5CB6D9B296DE73F003F16BF /* ProductState.swift in Sources */,
 				E5E7D9B3296C6D0B00BB196F /* DashboardBarDomain.swift in Sources */,
 				E5210A74296C934200AA4AFA /* SearchBarView.swift in Sources */,
+				E527D0B3296F35AE00CF5444 /* PaymentMethodDomain.swift in Sources */,
 				E51AA7D32940CF3200D13F1C /* Colors.swift in Sources */,
 				E5E840E22965B125004D504E /* AuthDomain.swift in Sources */,
 				E5CB6D9D296E09FE003F16BF /* ProductsServiceMock.swift in Sources */,
+				E527D0A5296F19EA00CF5444 /* PaymentView.swift in Sources */,
 				E5E7D9AB296C5E4D00BB196F /* DashboardBarView.swift in Sources */,
 				E5E8867B2950915E0096F9FD /* BMTextFieldDomain.swift in Sources */,
 				E5E69692295C820200CCE692 /* DependencyValues+extension.swift in Sources */,
 				E5D551302959F94D00613ECC /* BMClient.swift in Sources */,
+				E527D0B1296F357F00CF5444 /* PaymentMethodView.swift in Sources */,
 				E53508C42952453D008C5887 /* BMButton.swift in Sources */,
 				E5D46AF6294B4B9200E392F6 /* View+extension.swift in Sources */,
 				E57CCD3729564393003FE6E4 /* User.swift in Sources */,
@@ -589,6 +653,7 @@
 				E507FB44296753CA006BDFA8 /* BMHTTPHeaders.swift in Sources */,
 				E51AA7E0294112C700D13F1C /* LocalizedString.swift in Sources */,
 				E5F7CCCA293FB51D006382F2 /* BMTextFieldView.swift in Sources */,
+				E527D09E296EFBE200CF5444 /* PromoCardView.swift in Sources */,
 				E53508C7295251D5008C5887 /* LogInDomain.swift in Sources */,
 				E53508BF2951F95A008C5887 /* SecureToggleTextFieldDomain.swift in Sources */,
 				E5E69694295CC25A00CCE692 /* PromptViewModifier.swift in Sources */,
@@ -602,6 +667,7 @@
 				E5E6968E295C758700CCE692 /* AuthServiceMock.swift in Sources */,
 				E51AA7D12940C93500D13F1C /* UIConstants.swift in Sources */,
 				E5E7D9A8296C5E2C00BB196F /* DashboardView.swift in Sources */,
+				E527D0A2296F0D1700CF5444 /* ScaleButtonEffect.swift in Sources */,
 				E580ECA5295F6BB200DEADC1 /* LoaderView.swift in Sources */,
 				E57CCD2D29563FFB003FE6E4 /* Dictionary+extension.swift in Sources */,
 				E5CB6D97296DE645003F16BF /* ProductsDomain.swift in Sources */,
@@ -612,9 +678,11 @@
 				E580ECA3295F6B9500DEADC1 /* LoaderPresenterModifier.swift in Sources */,
 				E5E8867E295091DF0096F9FD /* SignUpDomain.swift in Sources */,
 				E5914829295B83A800F6ED86 /* GenericResponse.swift in Sources */,
+				E527D0AD296F25B600CF5444 /* DividerView.swift in Sources */,
 				E5F7CCCD293FB643006382F2 /* Validatable+String.swift in Sources */,
 				E51AA7DC29410F2B00D13F1C /* String+extension.swift in Sources */,
 				E57CCD33295641DE003FE6E4 /* AuthService.swift in Sources */,
+				E527D0B5296F3F1F00CF5444 /* PaymentMethod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
