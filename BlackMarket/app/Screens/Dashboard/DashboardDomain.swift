@@ -12,11 +12,14 @@ struct DashboardDomain: ReducerProtocol {
   struct State: Equatable {
     var dashboardBarState = DashboardBarDomain.State()
     var searchBarState = SearchBarDomain.State(text: "")
+    var productsState = ProductsDomain.State()
+
   }
   
   enum Action {
     case dashboardBarAction(DashboardBarDomain.Action)
     case searchBarAction(SearchBarDomain.Action)
+    case productsAction(ProductsDomain.Action)
   }
   
   var body: some ReducerProtocol<State, Action> {
@@ -27,9 +30,23 @@ struct DashboardDomain: ReducerProtocol {
     Scope(state: \.searchBarState, action: /Action.searchBarAction) {
       SearchBarDomain()
     }
+    Scope(state: \.productsState, action: /Action.productsAction) {
+      ProductsDomain()
+    }
     
     Reduce { state, action in
-      return .none
+      switch action {
+      case let .searchBarAction(searchBarAction):
+        switch searchBarAction {
+        case .binding:
+          let text = state.searchBarState.text
+          return .task {
+            Action.productsAction(.filterProductsByKeyword(text))
+          }
+        default: return .none
+        }
+      default: return .none
+      }
     }
   }
   

@@ -19,7 +19,14 @@ extension Image {
   static let shoppingCart = Image("shopping-cart")
   static let menu = Image("menu")
   static let search = Image(systemName: "magnifyingglass")
+  static let selectedHeart = Image(systemName: "heart.fill")
+  static let unselectedHeart = Image(systemName: "heart")
+  
   static func eye(slashed: Bool) -> Image {
     return slashed ? Self.eyeSlash : Self.eye
+  }
+  
+  static func heart(liked: Bool) -> Image {
+    return liked ? Self.selectedHeart : Self.unselectedHeart
   }
 }
