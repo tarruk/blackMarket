@@ -17,23 +17,47 @@ struct DashboardView: View {
         DashboardBarView(
           store: store.scope(
             state: \.dashboardBarState,
-            action: DashboardDomain.Action.dashboardBarAction
+            action: DashboardDomain.Action.dashboardBar
           )
         )
         SearchBarView(
           store: store.scope(
             state: \.searchBarState,
-            action: DashboardDomain.Action.searchBarAction
+            action: DashboardDomain.Action.searchBar
           )
         )
-        ProductsView(
-          store: store.scope(
-            state: \.productsState,
-            action: DashboardDomain.Action.productsAction
+        ScrollView(.vertical) {
+          ProductsView(
+            store: store.scope(
+              state: \.productsState,
+              action: DashboardDomain.Action.products
+            )
           )
-        )
-        Spacer()
-      }
+          Button {
+            viewStore.send(.seeAllButtonTapped)
+          } label: {
+            Text(LocalizedString.DashboardView.seeAllButtonTitle)
+              .fontWeight(.bold)
+          }.padding()
+          
+          PromoCardView(
+            store: store.scope(
+              state: \.promoCardState,
+              action: DashboardDomain.Action.promoCard
+            )
+          ).padding()
+          
+          PaymentView(
+            store: store.scope(
+              state: \.paymentState,
+              action: DashboardDomain.Action.payment
+            )
+          ).padding()
+          
+          Spacer()
+        }
+        .scrollIndicators(.hidden)
+      }.background(Color.dashboardBackground)
     }
   }
 }
@@ -47,4 +71,10 @@ struct DashboardView_Previews: PreviewProvider {
         )
       )
     }
+}
+
+private extension LocalizedString {
+  enum DashboardView {
+    static let seeAllButtonTitle = "SEE_ALL_BUTTON_TITLE".localized
+  }
 }

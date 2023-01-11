@@ -16,4 +16,5 @@ extension Color {
   static let warning = Color("warning-yellow")
   static let success = Color("success-green")
   static let placeholderGray = Color("placeholder-gray")
+  static let dashboardBackground = Color("dashboard-background")
 }

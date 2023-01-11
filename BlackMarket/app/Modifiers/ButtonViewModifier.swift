@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum ButtonStyle {
+enum ButtonType {
   case primary
   case secundary
   
@@ -46,11 +46,11 @@ enum ButtonStyle {
 
 struct ButtonViewModifier: ViewModifier {
   
-  let style: ButtonStyle
+  let type: ButtonType
   var disabled: Bool = false
   
   func body(content: Content) -> some View {
-    switch style {
+    switch type {
     case .primary:
       buildBorderedConfig(toContent: content)
         .disabled(disabled)
@@ -61,10 +61,10 @@ struct ButtonViewModifier: ViewModifier {
   
   func buildBorderedConfig(toContent content: Content) -> some View {
     return content
-      .frame(maxWidth: style.width)
-      .frame(height: style.height)
-      .background(disabled ? .lightGray : style.backgroundColor)
-      .foregroundColor(disabled ? .darkGray : style.textColor)
+      .frame(maxWidth: type.width)
+      .frame(height: type.height)
+      .background(disabled ? .lightGray : type.backgroundColor)
+      .foregroundColor(disabled ? .darkGray : type.textColor)
       .font(.headline)
       .fontWeight(.semibold)
       .cornerRadius(UI.CornerRadius.small)
@@ -74,21 +74,21 @@ struct ButtonViewModifier: ViewModifier {
     return content
       .font(.headline)
       .fontWeight(.semibold)
-      .frame(maxWidth: style.width)
-      .frame(height: style.height)
-      .foregroundColor(style.textColor)
+      .frame(maxWidth: type.width)
+      .frame(height: type.height)
+      .foregroundColor(type.textColor)
       .overlay(
         RoundedRectangle(cornerRadius: UI.CornerRadius.small)
           .stroke(lineWidth: 1)
-          .background(style.backgroundColor)
-          .foregroundColor(style.textColor)
+          .background(type.backgroundColor)
+          .foregroundColor(type.textColor)
       )
   }
 }
 
 extension Text {
-  func withButtonStyle(_ style: ButtonStyle, disabled: Bool) -> some View {
-    modifier(ButtonViewModifier(style: style, disabled: disabled))
+  func withButtonStyle(_ type: ButtonType, disabled: Bool) -> some View {
+    modifier(ButtonViewModifier(type: type, disabled: disabled))
   }
 }
 
