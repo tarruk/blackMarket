@@ -21,7 +21,7 @@ struct BMTextFieldView: View {
             SecureToggleTextFieldView(
               store: store.scope(
                 state: \.secureTextFieldState,
-                action: BMTextFieldDomain.Action.secureTextFieldValueChanged
+                action: BMTextFieldDomain.Action.secureTextFieldBinding
               )
             )
             .autocorrectionDisabled()

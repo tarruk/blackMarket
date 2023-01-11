@@ -22,10 +22,6 @@ struct SearchBarView: View {
               text: viewStore.binding(\.$text)
             )
             .foregroundColor(.blackish)
-            .searchable(
-              text: viewStore.binding(\.$text),
-              placement: .automatic
-            )
             Button {
               viewStore.send(.search)
             } label: {

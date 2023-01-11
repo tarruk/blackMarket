@@ -43,6 +43,13 @@
 		E580ECA3295F6B9500DEADC1 /* LoaderPresenterModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580ECA2295F6B9500DEADC1 /* LoaderPresenterModifier.swift */; };
 		E580ECA5295F6BB200DEADC1 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E580ECA4295F6BB200DEADC1 /* LoaderView.swift */; };
 		E5914829295B83A800F6ED86 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5914828295B83A800F6ED86 /* GenericResponse.swift */; };
+		E5CB6D8F296DA214003F16BF /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CB6D8E296DA214003F16BF /* ProductsView.swift */; };
+		E5CB6D93296DA232003F16BF /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CB6D92296DA232003F16BF /* ProductCardView.swift */; };
+		E5CB6D95296DB8E3003F16BF /* ProductCardDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CB6D94296DB8E3003F16BF /* ProductCardDomain.swift */; };
+		E5CB6D97296DE645003F16BF /* ProductsDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CB6D96296DE645003F16BF /* ProductsDomain.swift */; };
+		E5CB6D99296DE6CF003F16BF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CB6D98296DE6CF003F16BF /* Product.swift */; };
+		E5CB6D9B296DE73F003F16BF /* ProductState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CB6D9A296DE73F003F16BF /* ProductState.swift */; };
+		E5CB6D9D296E09FE003F16BF /* ProductsServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CB6D9C296E09FE003F16BF /* ProductsServiceMock.swift */; };
 		E5CD404529684D6400F56653 /* APIClient+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CD404429684D6400F56653 /* APIClient+extension.swift */; };
 		E5D46AF6294B4B9200E392F6 /* View+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D46AF5294B4B9200E392F6 /* View+extension.swift */; };
 		E5D551302959F94D00613ECC /* BMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D5512F2959F94D00613ECC /* BMClient.swift */; };
@@ -101,6 +108,13 @@
 		E580ECA4295F6BB200DEADC1 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		E5914824295B6EEC00F6ED86 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		E5914828295B83A800F6ED86 /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
+		E5CB6D8E296DA214003F16BF /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
+		E5CB6D92296DA232003F16BF /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
+		E5CB6D94296DB8E3003F16BF /* ProductCardDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardDomain.swift; sourceTree = "<group>"; };
+		E5CB6D96296DE645003F16BF /* ProductsDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsDomain.swift; sourceTree = "<group>"; };
+		E5CB6D98296DE6CF003F16BF /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		E5CB6D9A296DE73F003F16BF /* ProductState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductState.swift; sourceTree = "<group>"; };
+		E5CB6D9C296E09FE003F16BF /* ProductsServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsServiceMock.swift; sourceTree = "<group>"; };
 		E5CD404429684D6400F56653 /* APIClient+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+extension.swift"; sourceTree = "<group>"; };
 		E5D46AF5294B4B9200E392F6 /* View+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extension.swift"; sourceTree = "<group>"; };
 		E5D5512F2959F94D00613ECC /* BMClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMClient.swift; sourceTree = "<group>"; };
@@ -246,6 +260,8 @@
 				E57CCD2A29563ED5003FE6E4 /* Session.swift */,
 				E57CCD3629564393003FE6E4 /* User.swift */,
 				E5914828295B83A800F6ED86 /* GenericResponse.swift */,
+				E5CB6D98296DE6CF003F16BF /* Product.swift */,
+				E5CB6D9A296DE73F003F16BF /* ProductState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -278,10 +294,30 @@
 			path = Loader;
 			sourceTree = "<group>";
 		};
+		E5CB6D8D296DA1F8003F16BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E5CB6D91296DA224003F16BF /* ProductCard */,
+				E5CB6D8E296DA214003F16BF /* ProductsView.swift */,
+				E5CB6D96296DE645003F16BF /* ProductsDomain.swift */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		E5CB6D91296DA224003F16BF /* ProductCard */ = {
+			isa = PBXGroup;
+			children = (
+				E5CB6D92296DA232003F16BF /* ProductCardView.swift */,
+				E5CB6D94296DB8E3003F16BF /* ProductCardDomain.swift */,
+			);
+			path = ProductCard;
+			sourceTree = "<group>";
+		};
 		E5E6968C295C756E00CCE692 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
 				E5E6968D295C758700CCE692 /* AuthServiceMock.swift */,
+				E5CB6D9C296E09FE003F16BF /* ProductsServiceMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -299,6 +335,7 @@
 		E5E7D9A9296C5E3900BB196F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E5CB6D8D296DA1F8003F16BF /* Products */,
 				E5210A72296C933200AA4AFA /* SearchBar */,
 				E5E7D9B1296C6CFD00BB196F /* DashboardBar */,
 				E5E7D9AE296C67EC00BB196F /* DashboardBarButton */,
@@ -528,10 +565,12 @@
 				E57CCD35295642B1003FE6E4 /* AuthEndpoint.swift in Sources */,
 				E5E7D9AD296C63DD00BB196F /* DashboardButtonView.swift in Sources */,
 				E5ED6BE5295E0AEA0099C3CC /* PromptView.swift in Sources */,
+				E5CB6D9B296DE73F003F16BF /* ProductState.swift in Sources */,
 				E5E7D9B3296C6D0B00BB196F /* DashboardBarDomain.swift in Sources */,
 				E5210A74296C934200AA4AFA /* SearchBarView.swift in Sources */,
 				E51AA7D32940CF3200D13F1C /* Colors.swift in Sources */,
 				E5E840E22965B125004D504E /* AuthDomain.swift in Sources */,
+				E5CB6D9D296E09FE003F16BF /* ProductsServiceMock.swift in Sources */,
 				E5E7D9AB296C5E4D00BB196F /* DashboardBarView.swift in Sources */,
 				E5E8867B2950915E0096F9FD /* BMTextFieldDomain.swift in Sources */,
 				E5E69692295C820200CCE692 /* DependencyValues+extension.swift in Sources */,
@@ -555,7 +594,9 @@
 				E5E69694295CC25A00CCE692 /* PromptViewModifier.swift in Sources */,
 				E5E840E02965B10B004D504E /* AuthView.swift in Sources */,
 				E57BCF4A295340B70089B88A /* LogInCardView.swift in Sources */,
+				E5CB6D95296DB8E3003F16BF /* ProductCardDomain.swift in Sources */,
 				E50E7568293F83F90021722B /* BlackMarketApp.swift in Sources */,
+				E5CB6D8F296DA214003F16BF /* ProductsView.swift in Sources */,
 				E5F7CCC0293FB0F0006382F2 /* Assets.swift in Sources */,
 				E5ED6BEA295E20C60099C3CC /* PromptModifierDomain.swift in Sources */,
 				E5E6968E295C758700CCE692 /* AuthServiceMock.swift in Sources */,
@@ -563,8 +604,11 @@
 				E5E7D9A8296C5E2C00BB196F /* DashboardView.swift in Sources */,
 				E580ECA5295F6BB200DEADC1 /* LoaderView.swift in Sources */,
 				E57CCD2D29563FFB003FE6E4 /* Dictionary+extension.swift in Sources */,
+				E5CB6D97296DE645003F16BF /* ProductsDomain.swift in Sources */,
+				E5CB6D93296DA232003F16BF /* ProductCardView.swift in Sources */,
 				E51AA7C82940BF7C00D13F1C /* SecureToggleTextFieldView.swift in Sources */,
 				E580EC9F295F433E00DEADC1 /* SignUpCardView.swift in Sources */,
+				E5CB6D99296DE6CF003F16BF /* Product.swift in Sources */,
 				E580ECA3295F6B9500DEADC1 /* LoaderPresenterModifier.swift in Sources */,
 				E5E8867E295091DF0096F9FD /* SignUpDomain.swift in Sources */,
 				E5914829295B83A800F6ED86 /* GenericResponse.swift in Sources */,
