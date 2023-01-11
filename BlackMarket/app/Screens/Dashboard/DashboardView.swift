@@ -26,6 +26,12 @@ struct DashboardView: View {
             action: DashboardDomain.Action.searchBarAction
           )
         )
+        ProductsView(
+          store: store.scope(
+            state: \.productsState,
+            action: DashboardDomain.Action.productsAction
+          )
+        )
         Spacer()
       }
     }

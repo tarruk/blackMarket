@@ -12,12 +12,7 @@ import ComposableArchitecture
 struct BlackMarketApp: App {
     var body: some Scene {
       WindowGroup {
-        AuthView(
-          store: Store(
-            initialState: AuthDomain.State(),
-            reducer: AuthDomain()
-          )
-        )
+        DashboardView(store: Store(initialState: DashboardDomain.State(), reducer: DashboardDomain()))
       }
     }
 }
