@@ -26,13 +26,13 @@ struct DashboardView: View {
             action: DashboardDomain.Action.searchBar
           )
         )
-        ScrollView(.vertical) {
+        ScrollView(.vertical, showsIndicators: false) {
           ProductsView(
             store: store.scope(
               state: \.productsState,
               action: DashboardDomain.Action.products
             )
-          )
+          ).background()
           Button {
             viewStore.send(.seeAllButtonTapped)
           } label: {
@@ -46,7 +46,6 @@ struct DashboardView: View {
               action: DashboardDomain.Action.promoCard
             )
           ).padding()
-          
           PaymentView(
             store: store.scope(
               state: \.paymentState,
@@ -54,10 +53,14 @@ struct DashboardView: View {
             )
           ).padding()
           
-          Spacer()
-        }
-        .scrollIndicators(.hidden)
-      }.background(Color.dashboardBackground)
+          FooterView(store: store.scope(
+            state: \.footerState,
+            action: DashboardDomain.Action.footer
+          ))
+        }.ignoresSafeArea()
+      }.onAppear {
+        UIScrollView.appearance().bounces = false
+      }
     }
   }
 }

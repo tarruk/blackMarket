@@ -24,6 +24,10 @@ extension Image {
   static let creditCard = Image("credit_card")
   static let crypto = Image("crypto")
   static let payPal = Image("paypal")
+  static let facebook = Image("facebook")
+  static let linkedin = Image("linkedin")
+  static let instagram = Image("instagram")
+  static let twitter = Image("twitter")
   
   static func eye(slashed: Bool) -> Image {
     return slashed ? Self.eyeSlash : Self.eye

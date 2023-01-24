@@ -15,6 +15,7 @@ struct DashboardDomain: ReducerProtocol {
     var productsState = ProductsDomain.State()
     var promoCardState = PromoCardDomain.State()
     var paymentState = PaymentDomain.State()
+    var footerState = FooterDomain.State(email: "")
 
   }
   
@@ -24,6 +25,7 @@ struct DashboardDomain: ReducerProtocol {
     case products(ProductsDomain.Action)
     case promoCard(PromoCardDomain.Action)
     case payment(PaymentDomain.Action)
+    case footer(FooterDomain.Action)
     case seeAllButtonTapped
   }
   
@@ -43,6 +45,9 @@ struct DashboardDomain: ReducerProtocol {
     }
     Scope(state: \.paymentState, action: /Action.payment) {
       PaymentDomain()
+    }
+    Scope(state: \.footerState, action: /Action.footer) {
+      FooterDomain()
     }
     
     Reduce { state, action in

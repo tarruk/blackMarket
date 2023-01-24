@@ -22,6 +22,11 @@
 		E5210A74296C934200AA4AFA /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5210A73296C934200AA4AFA /* SearchBarView.swift */; };
 		E5210A76296CA2CD00AA4AFA /* SearchBarDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5210A75296CA2CD00AA4AFA /* SearchBarDomain.swift */; };
 		E5210A78296CAF4D00AA4AFA /* DashboardDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5210A77296CAF4D00AA4AFA /* DashboardDomain.swift */; };
+		E525F6FF2975C125004CBE6E /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525F6FE2975C125004CBE6E /* FooterView.swift */; };
+		E525F7022975CA7D004CBE6E /* FooterBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525F7012975CA7D004CBE6E /* FooterBarView.swift */; };
+		E525F7042975CAA5004CBE6E /* FooterBarDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525F7032975CAA5004CBE6E /* FooterBarDomain.swift */; };
+		E525F7072975CBB6004CBE6E /* FooterBarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525F7062975CBB6004CBE6E /* FooterBarButtonView.swift */; };
+		E525F70A2975E260004CBE6E /* FooterDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525F7092975E260004CBE6E /* FooterDomain.swift */; };
 		E527D09E296EFBE200CF5444 /* PromoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E527D09D296EFBE200CF5444 /* PromoCardView.swift */; };
 		E527D0A0296F046600CF5444 /* PromoCardDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E527D09F296F046600CF5444 /* PromoCardDomain.swift */; };
 		E527D0A2296F0D1700CF5444 /* ScaleButtonEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = E527D0A1296F0D1700CF5444 /* ScaleButtonEffect.swift */; };
@@ -99,6 +104,11 @@
 		E5210A73296C934200AA4AFA /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		E5210A75296CA2CD00AA4AFA /* SearchBarDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarDomain.swift; sourceTree = "<group>"; };
 		E5210A77296CAF4D00AA4AFA /* DashboardDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDomain.swift; sourceTree = "<group>"; };
+		E525F6FE2975C125004CBE6E /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		E525F7012975CA7D004CBE6E /* FooterBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterBarView.swift; sourceTree = "<group>"; };
+		E525F7032975CAA5004CBE6E /* FooterBarDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterBarDomain.swift; sourceTree = "<group>"; };
+		E525F7062975CBB6004CBE6E /* FooterBarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterBarButtonView.swift; sourceTree = "<group>"; };
+		E525F7092975E260004CBE6E /* FooterDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterDomain.swift; sourceTree = "<group>"; };
 		E527D09D296EFBE200CF5444 /* PromoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCardView.swift; sourceTree = "<group>"; };
 		E527D09F296F046600CF5444 /* PromoCardDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCardDomain.swift; sourceTree = "<group>"; };
 		E527D0A1296F0D1700CF5444 /* ScaleButtonEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleButtonEffect.swift; sourceTree = "<group>"; };
@@ -235,6 +245,34 @@
 				E5210A75296CA2CD00AA4AFA /* SearchBarDomain.swift */,
 			);
 			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		E525F6FD2975C119004CBE6E /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				E525F7052975CB8E004CBE6E /* FooterBarButton */,
+				E525F7002975CA6E004CBE6E /* FooterBarView */,
+				E525F6FE2975C125004CBE6E /* FooterView.swift */,
+				E525F7092975E260004CBE6E /* FooterDomain.swift */,
+			);
+			path = Footer;
+			sourceTree = "<group>";
+		};
+		E525F7002975CA6E004CBE6E /* FooterBarView */ = {
+			isa = PBXGroup;
+			children = (
+				E525F7012975CA7D004CBE6E /* FooterBarView.swift */,
+				E525F7032975CAA5004CBE6E /* FooterBarDomain.swift */,
+			);
+			path = FooterBarView;
+			sourceTree = "<group>";
+		};
+		E525F7052975CB8E004CBE6E /* FooterBarButton */ = {
+			isa = PBXGroup;
+			children = (
+				E525F7062975CBB6004CBE6E /* FooterBarButtonView.swift */,
+			);
+			path = FooterBarButton;
 			sourceTree = "<group>";
 		};
 		E527D09C296EFBD300CF5444 /* PromoCard */ = {
@@ -383,6 +421,7 @@
 				E5E7D9A9296C5E3900BB196F /* Components */,
 				E5E7D9A7296C5E2C00BB196F /* DashboardView.swift */,
 				E5210A77296CAF4D00AA4AFA /* DashboardDomain.swift */,
+				E5E840DE2965B0FA004D504E /* Auth */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -390,6 +429,7 @@
 		E5E7D9A9296C5E3900BB196F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E525F6FD2975C119004CBE6E /* Footer */,
 				E527D0A3296F16D800CF5444 /* Payment */,
 				E527D09C296EFBD300CF5444 /* PromoCard */,
 				E5CB6D8D296DA1F8003F16BF /* Products */,
@@ -422,7 +462,6 @@
 			isa = PBXGroup;
 			children = (
 				E5E7D9A6296C5E2000BB196F /* Dashboard */,
-				E5E840DE2965B0FA004D504E /* Auth */,
 				E5F7CCC5293FB4D9006382F2 /* SignUp */,
 				E53508C0295211A4008C5887 /* LogIn */,
 			);
@@ -626,11 +665,13 @@
 				E5E7D9AD296C63DD00BB196F /* DashboardButtonView.swift in Sources */,
 				E527D0AB296F253D00CF5444 /* PaymentDomain.swift in Sources */,
 				E5ED6BE5295E0AEA0099C3CC /* PromptView.swift in Sources */,
+				E525F7042975CAA5004CBE6E /* FooterBarDomain.swift in Sources */,
 				E5CB6D9B296DE73F003F16BF /* ProductState.swift in Sources */,
 				E5E7D9B3296C6D0B00BB196F /* DashboardBarDomain.swift in Sources */,
 				E5210A74296C934200AA4AFA /* SearchBarView.swift in Sources */,
 				E527D0B3296F35AE00CF5444 /* PaymentMethodDomain.swift in Sources */,
 				E51AA7D32940CF3200D13F1C /* Colors.swift in Sources */,
+				E525F70A2975E260004CBE6E /* FooterDomain.swift in Sources */,
 				E5E840E22965B125004D504E /* AuthDomain.swift in Sources */,
 				E5CB6D9D296E09FE003F16BF /* ProductsServiceMock.swift in Sources */,
 				E527D0A5296F19EA00CF5444 /* PaymentView.swift in Sources */,
@@ -651,12 +692,15 @@
 				E57CCD2B29563ED5003FE6E4 /* Session.swift in Sources */,
 				E57CCD3029564028003FE6E4 /* SessionManager.swift in Sources */,
 				E507FB44296753CA006BDFA8 /* BMHTTPHeaders.swift in Sources */,
+				E525F7022975CA7D004CBE6E /* FooterBarView.swift in Sources */,
 				E51AA7E0294112C700D13F1C /* LocalizedString.swift in Sources */,
+				E525F7072975CBB6004CBE6E /* FooterBarButtonView.swift in Sources */,
 				E5F7CCCA293FB51D006382F2 /* BMTextFieldView.swift in Sources */,
 				E527D09E296EFBE200CF5444 /* PromoCardView.swift in Sources */,
 				E53508C7295251D5008C5887 /* LogInDomain.swift in Sources */,
 				E53508BF2951F95A008C5887 /* SecureToggleTextFieldDomain.swift in Sources */,
 				E5E69694295CC25A00CCE692 /* PromptViewModifier.swift in Sources */,
+				E525F6FF2975C125004CBE6E /* FooterView.swift in Sources */,
 				E5E840E02965B10B004D504E /* AuthView.swift in Sources */,
 				E57BCF4A295340B70089B88A /* LogInCardView.swift in Sources */,
 				E5CB6D95296DB8E3003F16BF /* ProductCardDomain.swift in Sources */,
