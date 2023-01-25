@@ -26,11 +26,11 @@ final class AuthService: BMClient, AuthServiceProtocol {
     case userSessionInvalid
   }
   
-  private let sessionManager: SessionDataManager
+  private let sessionManager: SessionManager
   private let userDataManager: UserDataManager
   
   init(
-    sessionManager: SessionDataManager = SessionDataManager.shared,
+    sessionManager: SessionManager = SessionManager.shared,
     userDataManager: UserDataManager = UserDataManager.shared
   ) {
     self.sessionManager = sessionManager
@@ -76,7 +76,7 @@ final class AuthService: BMClient, AuthServiceProtocol {
         let user = userResponse?.user,
         let accessToken = userResponse?.accessToken,
         let refreshToken = userResponse?.refreshToken,
-        saveUserSession(
+        await saveUserSession(
           user,
           accessToken: accessToken,
           refreshToken: refreshToken
@@ -91,16 +91,14 @@ final class AuthService: BMClient, AuthServiceProtocol {
   }
   
   
+  @MainActor
   private func saveUserSession(
     _ user: User?,
     accessToken: String,
     refreshToken: String
   ) -> Bool {
     userDataManager.currentUser = user
-    sessionManager.currentSession = Session(
-      accessToken: accessToken,
-      refreshToken: refreshToken
-    )
+    sessionManager.saveSession(accessToken: accessToken, refreshToken: refreshToken)
     return userDataManager.currentUser != nil && sessionManager.isValidSession
   }
 }

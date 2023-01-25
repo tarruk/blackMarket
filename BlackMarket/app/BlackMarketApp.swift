@@ -10,14 +10,29 @@ import ComposableArchitecture
 
 @main
 struct BlackMarketApp: App {
-    var body: some Scene {
-      WindowGroup {
-        AuthView(
-          store: Store(
-            initialState: AuthDomain.State(),
-            reducer: AuthDomain()
+  @State private var isLogged: Bool = SessionManager.shared.isValidSession
+  
+  var body: some Scene {
+    WindowGroup {
+      Group {
+        if isLogged {
+          DashboardView(
+            store: Store(
+              initialState: DashboardDomain.State(),
+              reducer: DashboardDomain()
+            )
           )
-        )
+        } else {
+          AuthView(
+            store: Store(
+              initialState: AuthDomain.State(),
+              reducer: AuthDomain()
+            )
+          )
+        }
+      }.onReceive(SessionManager.shared.isSessionValidPublisher) { isValid in
+        isLogged = isValid
       }
     }
+  }
 }
