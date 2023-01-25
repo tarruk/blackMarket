@@ -7,7 +7,6 @@
 
 import Foundation
 import RSSwiftNetworking
-import ComposableArchitecture
 
 protocol AuthServiceProtocol {
   func signUp(

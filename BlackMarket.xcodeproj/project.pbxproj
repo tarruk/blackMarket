@@ -85,6 +85,9 @@
 		E5F7CCC0293FB0F0006382F2 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F7CCBF293FB0F0006382F2 /* Assets.swift */; };
 		E5F7CCCA293FB51D006382F2 /* BMTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F7CCC9293FB51D006382F2 /* BMTextFieldView.swift */; };
 		E5F7CCCD293FB643006382F2 /* Validatable+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F7CCCC293FB643006382F2 /* Validatable+String.swift */; };
+		E5FDD7D529815B76009C2548 /* ProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FDD7D429815B76009C2548 /* ProductsService.swift */; };
+		E5FDD7D929815BB2009C2548 /* ProductsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FDD7D829815BB2009C2548 /* ProductsEndpoint.swift */; };
+		E5FDD7DB2981A519009C2548 /* ProductsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FDD7DA2981A519009C2548 /* ProductsResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,6 +167,9 @@
 		E5F7CCBF293FB0F0006382F2 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		E5F7CCC9293FB51D006382F2 /* BMTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMTextFieldView.swift; sourceTree = "<group>"; };
 		E5F7CCCC293FB643006382F2 /* Validatable+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Validatable+String.swift"; sourceTree = "<group>"; };
+		E5FDD7D429815B76009C2548 /* ProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsService.swift; sourceTree = "<group>"; };
+		E5FDD7D829815BB2009C2548 /* ProductsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsEndpoint.swift; sourceTree = "<group>"; };
+		E5FDD7DA2981A519009C2548 /* ProductsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +361,7 @@
 				E5CB6D98296DE6CF003F16BF /* Product.swift */,
 				E5CB6D9A296DE73F003F16BF /* ProductState.swift */,
 				E527D0B4296F3F1F00CF5444 /* PaymentMethod.swift */,
+				E5FDD7DA2981A519009C2548 /* ProductsResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -371,8 +378,8 @@
 		E57CCD31295641D4003FE6E4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				E57CCD32295641DE003FE6E4 /* AuthService.swift */,
-				E57CCD34295642B1003FE6E4 /* AuthEndpoint.swift */,
+				E5FDD7D729815BA5009C2548 /* Products */,
+				E5FDD7D629815B9B009C2548 /* Auth */,
 				E5D5512F2959F94D00613ECC /* BMClient.swift */,
 			);
 			path = Services;
@@ -575,6 +582,24 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		E5FDD7D629815B9B009C2548 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				E57CCD32295641DE003FE6E4 /* AuthService.swift */,
+				E57CCD34295642B1003FE6E4 /* AuthEndpoint.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		E5FDD7D729815BA5009C2548 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E5FDD7D429815B76009C2548 /* ProductsService.swift */,
+				E5FDD7D829815BB2009C2548 /* ProductsEndpoint.swift */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -661,6 +686,7 @@
 				E57CCD39295644B1003FE6E4 /* UserDataManager.swift in Sources */,
 				E5E886802950FF390096F9FD /* Constants.swift in Sources */,
 				E527D0A0296F046600CF5444 /* PromoCardDomain.swift in Sources */,
+				E5FDD7DB2981A519009C2548 /* ProductsResponse.swift in Sources */,
 				E57CCD35295642B1003FE6E4 /* AuthEndpoint.swift in Sources */,
 				E5E7D9AD296C63DD00BB196F /* DashboardButtonView.swift in Sources */,
 				E527D0AB296F253D00CF5444 /* PaymentDomain.swift in Sources */,
@@ -695,6 +721,7 @@
 				E525F7022975CA7D004CBE6E /* FooterBarView.swift in Sources */,
 				E51AA7E0294112C700D13F1C /* LocalizedString.swift in Sources */,
 				E525F7072975CBB6004CBE6E /* FooterBarButtonView.swift in Sources */,
+				E5FDD7D929815BB2009C2548 /* ProductsEndpoint.swift in Sources */,
 				E5F7CCCA293FB51D006382F2 /* BMTextFieldView.swift in Sources */,
 				E527D09E296EFBE200CF5444 /* PromoCardView.swift in Sources */,
 				E53508C7295251D5008C5887 /* LogInDomain.swift in Sources */,
@@ -705,6 +732,7 @@
 				E57BCF4A295340B70089B88A /* LogInCardView.swift in Sources */,
 				E5CB6D95296DB8E3003F16BF /* ProductCardDomain.swift in Sources */,
 				E50E7568293F83F90021722B /* BlackMarketApp.swift in Sources */,
+				E5FDD7D529815B76009C2548 /* ProductsService.swift in Sources */,
 				E5CB6D8F296DA214003F16BF /* ProductsView.swift in Sources */,
 				E5F7CCC0293FB0F0006382F2 /* Assets.swift in Sources */,
 				E5ED6BEA295E20C60099C3CC /* PromptModifierDomain.swift in Sources */,

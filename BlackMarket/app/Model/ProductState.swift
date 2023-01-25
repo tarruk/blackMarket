@@ -9,28 +9,28 @@ import Foundation
 import SwiftUI
 
 enum ProductState: Decodable {
-  case restored
-  case new
-  case used
+  case A
+  case N
+  case U
   
   var title: String {
     switch self {
-    case .restored:
+    case .A:
       return "Restored"
-    case .new:
+    case .N:
       return "New"
-    case .used:
+    case .U:
       return "Used"
     }
   }
   
   var color: Color {
     switch self {
-    case .restored:
+    case .A:
       return .green
-    case .new:
+    case .N:
       return .blue
-    case .used:
+    case .U:
       return .orange
     }
   }

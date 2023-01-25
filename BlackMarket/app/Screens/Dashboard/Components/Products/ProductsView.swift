@@ -13,19 +13,37 @@ struct ProductsView: View {
   
   var body: some View {
     WithViewStore(store) { viewStore in
-      ScrollView(.horizontal) {
-        HStack {
-          ForEach(viewStore.products, id: \.id) {
-            ProductCardView(
-              store: Store(
-                initialState: ProductCardDomain.State(product: $0),
-                reducer: ProductCardDomain()
-              )
-            )
-          }
+      Group {
+        if viewStore.products.isEmpty {
+          VStack {
+            Image.productsNotFound
+              .resizable()
+              .renderingMode(.template)
+              .foregroundColor(Color.placeholderGray)
+              .frame(width: UI.ImageSize.medium, height: UI.ImageSize.medium)
+            Text(LocalizedString.ProductsView.notProductsMessage)
+              .foregroundColor(Color.placeholderGray)
+              .font(.headline)
+              .fontWeight(.medium)
+          }.frame(height: UI.ProductCardView.height)
+        } else {
+          ScrollView(.horizontal) {
+            HStack {
+              ForEach(viewStore.products, id: \.id) {
+                ProductCardView(
+                  store: Store(
+                    initialState: ProductCardDomain.State(product: $0),
+                    reducer: ProductCardDomain()
+                  )
+                )
+              }
+            }.padding()
+          }.scrollIndicators(.hidden)
         }
-        .padding()
-      }.scrollIndicators(.hidden)
+      }
+      .onAppear {
+        viewStore.send(.fetchProducts())
+      }
     }
   }
 }
@@ -37,4 +55,10 @@ struct ProductsView_Previews: PreviewProvider {
         reducer: ProductsDomain()
       ))
     }
+}
+
+private extension LocalizedString {
+  enum ProductsView {
+    static let notProductsMessage = "NO_PRODUCTS_FOUND".localized
+  }
 }

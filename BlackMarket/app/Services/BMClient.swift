@@ -11,6 +11,10 @@ import RSSwiftNetworkingAlamofire
 
 class BMClient {
   
+  enum BMError: Error {
+    case badResult
+  }
+  
   static let shared = BMClient()
   let apiClient: APIClient
 

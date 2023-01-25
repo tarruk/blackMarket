@@ -14,9 +14,14 @@ struct ProductCardView: View {
   var body: some View {
     WithViewStore(store) { viewStore in
       VStack(spacing: UI.Border.thin) {
-        viewStore.image
+        AsyncImage(url: viewStore.imageURL) { image in
+         image
           .resizable()
-          .frame(maxWidth: .infinity, maxHeight: .infinity)
+        } placeholder: {
+          Image.picturePlaceholder
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.white)
         VStack {
           HStack {
             Text(viewStore.formattedPrice)
@@ -36,7 +41,6 @@ struct ProductCardView: View {
           HStack {
             Text(viewStore.title)
               .lineLimit(1)
-              .minimumScaleFactor(UI.ScaleFactor.small)
             Spacer()
             Button {
               viewStore.send(.likeButtonTapped)
@@ -67,12 +71,12 @@ struct ProductCardView_Previews: PreviewProvider {
     ProductCardView(store: Store(
       initialState: ProductCardDomain.State(
         product: Product(
-          id: UUID(),
-          title: "Gamer chair",
-          price: 35.34,
-          state: .used,
-          liked: true,
-          imageURL: "product_3"
+          id: 2,
+          name: "Living chair",
+          state: .U,
+          price: 20.4,
+          picture: "product_2",
+          favorite: false
         )
       ),
       reducer: ProductCardDomain()
@@ -80,7 +84,7 @@ struct ProductCardView_Previews: PreviewProvider {
   }
 }
 
-private extension UI {
+extension UI {
   enum ProductCardView {
     static let width: CGFloat = 170
     static let height: CGFloat = 240

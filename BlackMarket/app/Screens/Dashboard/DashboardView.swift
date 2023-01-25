@@ -33,12 +33,15 @@ struct DashboardView: View {
               action: DashboardDomain.Action.products
             )
           ).background()
-          Button {
-            viewStore.send(.seeAllButtonTapped)
-          } label: {
-            Text(LocalizedString.DashboardView.seeAllButtonTitle)
-              .fontWeight(.bold)
-          }.padding()
+          
+          if !viewStore.productsState.products.isEmpty {
+            Button {
+              viewStore.send(.seeAllButtonTapped)
+            } label: {
+              Text(LocalizedString.DashboardView.seeAllButtonTitle)
+                .fontWeight(.bold)
+            }.padding()
+          }
           
           PromoCardView(
             store: store.scope(

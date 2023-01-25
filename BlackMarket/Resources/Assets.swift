@@ -28,6 +28,8 @@ extension Image {
   static let linkedin = Image("linkedin")
   static let instagram = Image("instagram")
   static let twitter = Image("twitter")
+  static let picturePlaceholder = Image("photo.fill")
+  static let productsNotFound = Image("products_not_found")
   
   static func eye(slashed: Bool) -> Image {
     return slashed ? Self.eyeSlash : Self.eye

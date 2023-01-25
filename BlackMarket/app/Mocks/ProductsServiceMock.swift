@@ -8,55 +8,59 @@
 import Foundation
 
 // TODO: Replace this mock with the real model of the service
-struct ProductsServiceMock {
+struct ProductsServiceMock: ProductsServiceProtocol {
+  func getProducts(categories: [String]?, page: Int?, pageSize: Int?, search: String?, state: String?, maxPrice: Double?, minPrice: Double?) async throws -> [Product] {
+    return Self.products
+  }
+  
   static let products: [Product] = [
     Product(
-      id: UUID(),
-      title: "Gamer chair",
+      id: 1,
+      name: "Gamer chair",
+      state: .A,
       price: 45.6,
-      state: .restored,
-      liked: true,
-      imageURL: "product_1"
+      picture: "product_1",
+      favorite: true
     ),
     Product(
-      id: UUID(),
-      title: "Living chair",
+      id: 2,
+      name: "Living chair",
+      state: .U,
       price: 20.4,
-      state: .used,
-      liked: false,
-      imageURL: "product_2"
+      picture: "product_2",
+      favorite: false
     ),
     Product(
-      id: UUID(),
-      title: "Coffee mug",
+      id: 3,
+      name: "Coffee mug",
+      state: .N,
       price: 10.93,
-      state: .new,
-      liked: false,
-      imageURL: "product_3"
+      picture: "product_3",
+      favorite: false
     ),
     Product(
-      id: UUID(),
-      title: "Gamer chair",
+      id: 1,
+      name: "Gamer chair",
+      state: .A,
       price: 45.6,
-      state: .restored,
-      liked: false,
-      imageURL: "product_1"
+      picture: "product_1",
+      favorite: true
     ),
     Product(
-      id: UUID(),
-      title: "Living chair",
+      id: 2,
+      name: "Living chair",
+      state: .U,
       price: 20.4,
-      state: .used,
-      liked: false,
-      imageURL: "product_2"
+      picture: "product_2",
+      favorite: false
     ),
     Product(
-      id: UUID(),
-      title: "Coffee mug",
+      id: 3,
+      name: "Coffee mug",
+      state: .N,
       price: 10.93,
-      state: .new,
-      liked: true,
-      imageURL: "product_3"
+      picture: "product_3",
+      favorite: false
     ),
   ]
 }

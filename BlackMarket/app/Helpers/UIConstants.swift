@@ -44,6 +44,13 @@ struct UI {
     static let small: CGFloat = 10
   }
   
+  enum ImageSize {
+    static let huge: CGFloat = 150
+    static let large: CGFloat = 80
+    static let medium: CGFloat = 50
+    static let small: CGFloat = 30
+  }
+  
   enum ViewAnimations {
     static let prompt: Animation = .spring(response: 0.4, dampingFraction: 0.6)
   }
