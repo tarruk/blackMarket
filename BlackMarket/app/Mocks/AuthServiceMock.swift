@@ -9,7 +9,7 @@ import Foundation
 import RSSwiftNetworking
 
 // TODO: Improve it with fake NetworkProvider
-final class AuthServiceMock: BMClient, AuthServiceProtocol {
+final class AuthServiceMock: AuthServiceProtocol {
   
   enum AuthError: Error {
     case userSessionInvalid
