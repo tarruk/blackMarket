@@ -16,12 +16,15 @@ struct BlackMarketApp: App {
     WindowGroup {
       Group {
         if isLogged {
-          DashboardView(
-            store: Store(
-              initialState: DashboardDomain.State(),
-              reducer: DashboardDomain()
-            )
-          )
+          TabBarView(tabBarManager: TabBarManager(
+            routes: [
+              .home,
+              .purchases,
+              .favorites,
+              .shoppingCart,
+              .menu
+            ]
+          ))
         } else {
           AuthView(
             store: Store(
