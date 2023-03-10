@@ -15,8 +15,6 @@ final class MenuRouter: Router {
   @Published var stack: [MenuRoute] = []
 
   @Published var sheetPresented: MenuRoute?
-  
-  private var cancellableBag = Set<AnyCancellable>()
-  
+
   init() {}
 }

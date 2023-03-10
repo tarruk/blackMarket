@@ -17,13 +17,7 @@ struct BlackMarketApp: App {
       Group {
         if isLogged {
           TabBarView(tabBarManager: TabBarManager(
-            routes: [
-              .home,
-              .purchases,
-              .favorites,
-              .shoppingCart,
-              .menu
-            ]
+            routes: [.home, .purchases, .favorites, .shoppingCart, .menu]
           ))
         } else {
           AuthView(

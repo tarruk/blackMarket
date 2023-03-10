@@ -15,9 +15,7 @@ final class ShoppingCartRouter: Router {
   @Published var stack: [ShoppingCartRoute] = []
 
   @Published var sheetPresented: ShoppingCartRoute?
-  
-  private var cancellableBag = Set<AnyCancellable>()
-  
+
   init() {}
 }
 

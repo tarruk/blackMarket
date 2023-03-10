@@ -19,14 +19,10 @@ struct StackRoutesRegistrationModifier<R: Router>: ViewModifier {
   }
 
   func body(content: Content) -> some View {
-    if #available(iOS 16.0, *) {
-      content
-        .navigationDestination(for: R.FlowRoute.self) { route in
-          route.routeView
-        }
-    } else {
-      content
-    }
+    content
+      .navigationDestination(for: R.FlowRoute.self) { route in
+        route.routeView
+      }
   }
 }
 

@@ -15,8 +15,6 @@ final class MainRouter: Router {
   @Published var stack: [MainRoute] = []
 
   @Published var sheetPresented: MainRoute?
-  
-  private var cancellableBag = Set<AnyCancellable>()
-  
+
   init() {}
 }

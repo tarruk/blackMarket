@@ -16,7 +16,5 @@ final class PurchasesRouter: Router {
 
   @Published var sheetPresented: PurchasesRoute?
 
-  private var cancellableBag = Set<AnyCancellable>()
-  
   init() {}
 }

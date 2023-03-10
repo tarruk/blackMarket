@@ -15,8 +15,6 @@ final class FavoritesRouter: Router {
   @Published var stack: [FavoritesRoute] = []
 
   @Published var sheetPresented: FavoritesRoute?
-  
-  private var cancellableBag = Set<AnyCancellable>()
-  
+
   init() {}
 }

@@ -65,38 +65,37 @@ extension Router {
     }
   }
 
-  
-   // MARK: - Stack Navigation
-   func push(toRoute route: FlowRoute) {
-     stack.append(route)
-   }
+  // MARK: - Stack Navigation
+  func push(toRoute route: FlowRoute) {
+    stack.append(route)
+  }
    
-   func pop() {
-     if !stack.isEmpty {
-       stack.removeLast()
-     } else {
-       debugPrint("Can't go back because the navigation stack is empty")
-     }
-   }
+  func pop() {
+    if !stack.isEmpty {
+      stack.removeLast()
+    } else {
+      debugPrint("Can't go back because the navigation stack is empty")
+    }
+  }
    
-   func popToRoot() {
-     stack = []
-   }
+  func popToRoot() {
+    stack = []
+  }
    
-   func deepPush(toRoutes routes: [FlowRoute]) {
-     stack.append(contentsOf: routes)
-   }
+  func deepPush(toRoutes routes: [FlowRoute]) {
+    stack.append(contentsOf: routes)
+  }
    
-   func beginNavigation(withRoutes routes: [FlowRoute]) {
-     stack = routes
-   }
+  func beginNavigation(withRoutes routes: [FlowRoute]) {
+    stack = routes
+  }
 
-   // MARK: - Modal Navigations
-   func present(_ route: FlowRoute) {
-     sheetPresented = route
-   }
+  // MARK: - Modal Navigations
+  func present(_ route: FlowRoute) {
+    sheetPresented = route
+  }
 
-   func dismiss() {
-     sheetPresented = nil
-   }
+  func dismiss() {
+    sheetPresented = nil
+  }
 }
