@@ -20,7 +20,13 @@ protocol ProductsServiceProtocol {
   ) async throws -> [Product]
 }
 
-final class ProductsService: BMClient, ProductsServiceProtocol {
+final class ProductsService: ProductsServiceProtocol {
+  
+  private let apiClient: BMClient
+  
+  init(apiClient: BMClient = .shared) {
+    self.apiClient = apiClient
+  }
   
   func getProducts(
     categories: [String]? = nil,
@@ -31,7 +37,7 @@ final class ProductsService: BMClient, ProductsServiceProtocol {
     maxPrice: Double? = nil,
     minPrice: Double? = nil
   ) async throws -> [Product] {
-    let response: RequestResponse<ProductsResponse> = await apiClient.request(
+    let response: BMRequestResponse<ProductsResponse> = await apiClient.request(
       endpoint: ProductsEndpoint.getProducts(
         categories: categories,
         page: page,
@@ -48,7 +54,7 @@ final class ProductsService: BMClient, ProductsServiceProtocol {
       if let products = productsResponse?.results {
         return products
       } else {
-        throw BMError.badResult
+        throw BMError(code: .badResult)
       }
     case .failure(let error):
       throw error

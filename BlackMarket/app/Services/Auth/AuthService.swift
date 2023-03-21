@@ -19,7 +19,7 @@ protocol AuthServiceProtocol {
   func logIn(email: String, password: String) async throws -> String
 }
 
-final class AuthService: BMClient, AuthServiceProtocol {
+final class AuthService: AuthServiceProtocol {
   
   enum AuthError: Error {
     case userSessionInvalid
@@ -27,11 +27,14 @@ final class AuthService: BMClient, AuthServiceProtocol {
   
   private let sessionManager: SessionManager
   private let userDataManager: UserDataManager
+  private let apiClient: BMClient
   
   init(
+    apiClient: BMClient = BMClient.shared,
     sessionManager: SessionManager = SessionManager.shared,
     userDataManager: UserDataManager = UserDataManager.shared
   ) {
+    self.apiClient = apiClient
     self.sessionManager = sessionManager
     self.userDataManager = userDataManager
   }
@@ -42,7 +45,7 @@ final class AuthService: BMClient, AuthServiceProtocol {
     password: String,
     passwordConfirmation: String
   ) async throws -> String {
-    let response: RequestResponse<GenericResponse> = await apiClient.request(
+    let response: BMRequestResponse<GenericResponse> = await apiClient.request(
       endpoint: AuthEndpoint.signIn(
         email: email,
         password: password,
@@ -62,7 +65,7 @@ final class AuthService: BMClient, AuthServiceProtocol {
   }
   
   func logIn(email: String, password: String) async throws -> String {
-    let response: RequestResponse<UserResponse> = await apiClient.requestWithoutCookies(
+    let response: BMRequestResponse<UserResponse> = await apiClient.requestWithoutCookies(
       endpoint: AuthEndpoint.logIn(
         email: email,
         password: password

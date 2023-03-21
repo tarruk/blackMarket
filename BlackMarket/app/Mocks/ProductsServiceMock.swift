@@ -17,7 +17,7 @@ struct ProductsServiceMock: ProductsServiceProtocol {
     Product(
       id: 1,
       name: "Gamer chair",
-      state: .A,
+      state: .restored,
       price: 45.6,
       picture: "product_1",
       favorite: true
@@ -25,7 +25,7 @@ struct ProductsServiceMock: ProductsServiceProtocol {
     Product(
       id: 2,
       name: "Living chair",
-      state: .U,
+      state: .used,
       price: 20.4,
       picture: "product_2",
       favorite: false
@@ -33,7 +33,7 @@ struct ProductsServiceMock: ProductsServiceProtocol {
     Product(
       id: 3,
       name: "Coffee mug",
-      state: .N,
+      state: .new,
       price: 10.93,
       picture: "product_3",
       favorite: false
@@ -41,7 +41,7 @@ struct ProductsServiceMock: ProductsServiceProtocol {
     Product(
       id: 1,
       name: "Gamer chair",
-      state: .A,
+      state: .restored,
       price: 45.6,
       picture: "product_1",
       favorite: true
@@ -49,7 +49,7 @@ struct ProductsServiceMock: ProductsServiceProtocol {
     Product(
       id: 2,
       name: "Living chair",
-      state: .U,
+      state: .used,
       price: 20.4,
       picture: "product_2",
       favorite: false
@@ -57,7 +57,7 @@ struct ProductsServiceMock: ProductsServiceProtocol {
     Product(
       id: 3,
       name: "Coffee mug",
-      state: .N,
+      state: .new,
       price: 10.93,
       picture: "product_3",
       favorite: false

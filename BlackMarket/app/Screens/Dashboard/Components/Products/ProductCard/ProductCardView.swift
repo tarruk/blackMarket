@@ -28,15 +28,7 @@ struct ProductCardView: View {
               .lineLimit(1)
               .minimumScaleFactor(UI.ScaleFactor.small)
             Spacer()
-            Text(viewStore.productState.title)
-              .font(.caption)
-              .fontWeight(.semibold)
-              .padding(UI.Padding.verySmall)
-              .background(viewStore.productState.color)
-              .foregroundColor(.white)
-              .cornerRadius(UI.CornerRadius.small)
-              .lineLimit(1)
-              .minimumScaleFactor(UI.ScaleFactor.small)
+            ProductStateView(state: viewStore.productState)
           }
           HStack {
             Text(viewStore.title)
@@ -73,7 +65,7 @@ struct ProductCardView_Previews: PreviewProvider {
         product: Product(
           id: 2,
           name: "Living chair",
-          state: .U,
+          state: .used,
           price: 20.4,
           picture: "product_2",
           favorite: false

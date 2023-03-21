@@ -11,6 +11,8 @@ import ComposableArchitecture
 struct ProductsView: View {
   let store: StoreOf<ProductsDomain>
   
+  @EnvironmentObject var mainRouter: MainRouter
+  
   var body: some View {
     WithViewStore(store) { viewStore in
       Group {
@@ -35,7 +37,9 @@ struct ProductsView: View {
                     initialState: ProductCardDomain.State(product: $0),
                     reducer: ProductCardDomain()
                   )
-                )
+                ).onTapGesture {
+                  mainRouter.push(toRoute: .productDetail)
+                }
               }
             }.padding()
           }.scrollIndicators(.hidden)
