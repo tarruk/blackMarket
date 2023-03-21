@@ -9,51 +9,29 @@ import SwiftUI
 import ComposableArchitecture
 
 struct DashboardBarView: View {
-  let store: StoreOf<DashboardBarDomain>
-  
+
   var body: some View {
-    WithViewStore(store) { viewStore in
-      HStack {
-        Image.logo
-          .resizable()
-          .renderingMode(.template)
-          .foregroundColor(.white)
-          .frame(
-            width: UI.DashboardBarView.logoWidth,
-            height: UI.DashboardBarView.logoHeight
-          )
-          .padding(.leading)
-        Spacer()
-        DashboardButtonView(
-          store: store.scope(
-            state: \.cartButtonState,
-            action: DashboardBarDomain.Action.cartButtonTapped
-          )
+    HStack(alignment: .center) {
+      Image.logo
+        .resizable()
+        .renderingMode(.template)
+        .foregroundColor(.white)
+        .frame(
+          width: UI.DashboardBarView.logoWidth,
+          height: UI.DashboardBarView.logoHeight
         )
-        DashboardButtonView(
-          store: store.scope(
-            state: \.menuButtonState,
-            action: DashboardBarDomain.Action.menuButtonTapped
-          )
-        )
-        .padding(.trailing)
-        
-      }
-      .frame(
-        maxWidth: UI.DashboardBarView.width,
-        maxHeight: UI.DashboardBarView.height
-      )
-      .background(.black)
     }
+    .frame(
+      maxWidth: UI.DashboardBarView.width,
+      maxHeight: UI.DashboardBarView.height
+    )
+    .background(.black)
   }
 }
 
 struct DashboardBarView_Previews: PreviewProvider {
   static var previews: some View {
-    DashboardBarView(store: Store(
-      initialState: DashboardBarDomain.State(),
-      reducer: DashboardBarDomain()
-    ))
+    DashboardBarView()
   }
 }
 

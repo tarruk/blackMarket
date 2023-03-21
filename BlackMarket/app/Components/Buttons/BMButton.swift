@@ -10,7 +10,7 @@ import SwiftUI
 struct BMButton: View {
   
   let title: String
-  let style: ButtonStyle
+  let style: ButtonType
   var disabled: Bool = false
   let action: () -> Void
   

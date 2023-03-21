@@ -8,9 +8,17 @@
 import Foundation
 import RSSwiftNetworking
 
-struct Session: Codable {
-  var accessToken: String?
-  var refreshToken: String?
+class Session: NSObject, Codable {
+  @objc dynamic var accessToken: String?
+  @objc dynamic var refreshToken: String?
+  
+  var isValid: Bool {
+    if
+      let accessToken = accessToken {
+      return !accessToken.isEmpty
+    }
+    return false
+  }
   
   private enum CodingKeys: String, CodingKey {
     case accessToken = "access_token"
