@@ -6,12 +6,30 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct BlackMarketApp: App {
-    var body: some Scene {
-      WindowGroup {
-          SignUpView()
+  @State private var isLogged: Bool = SessionManager.shared.isValidSession
+  
+  var body: some Scene {
+    WindowGroup {
+      Group {
+        if isLogged {
+          TabBarView(tabBarManager: TabBarManager(
+            routes: [.home, .purchases, .favorites, .shoppingCart, .menu]
+          ))
+        } else {
+          AuthView(
+            store: Store(
+              initialState: AuthDomain.State(),
+              reducer: AuthDomain()
+            )
+          )
+        }
+      }.onReceive(SessionManager.shared.isSessionValidPublisher) { isValid in
+        isLogged = isValid
       }
     }
+  }
 }

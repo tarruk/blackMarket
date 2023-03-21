@@ -9,7 +9,7 @@ import Foundation
 import RSSwiftNetworking
 
 // TODO: Improve it with fake NetworkProvider
-final class AuthServiceMock: BMClient, AuthServiceProtocol {
+final class AuthServiceMock: AuthServiceProtocol {
   
   enum AuthError: Error {
     case userSessionInvalid
@@ -17,13 +17,17 @@ final class AuthServiceMock: BMClient, AuthServiceProtocol {
   
   init() { }
   
-  func signIn(
+  func signUp(
     username: String,
     email: String,
     password: String,
     passwordConfirmation: String
-  ) async -> Result<String, Error> {
-    return .success("")
+  ) async throws -> String {
+    return ""
+  }
+  
+  func logIn(email: String, password: String) async throws -> String {
+    return ""
   }
 }
 
