@@ -7,54 +7,85 @@
 
 import Foundation
 import RSSwiftNetworking
+import Combine
 
-final class SessionDataManager: CurrentUserSessionProvider {
-  static let shared = SessionDataManager()
+internal final class SessionManager: NSObject, CurrentUserSessionProvider {
   
-  private let sessionKey = "bm-session"
+  var isSessionValidPublisher: AnyPublisher<Bool, Never> {
+    currentSessionPublisher
+      .map { $0?.isValid ?? false }
+      .eraseToAnyPublisher()
+  }
+
+  private var currentSessionPublisher: AnyPublisher<Session?, Never> {
+    userDefaults.publisher(for: \.currentSession).eraseToAnyPublisher()
+  }
   
-  var currentSession: Session? {
+  private var subscriptions = Set<AnyCancellable>()
+  
+  static let shared = SessionManager()
+
+  private let userDefaults: UserDefaults
+
+  init(userDefaults: UserDefaults = .standard) {
+    self.userDefaults = userDefaults
+  }
+
+  private(set) var currentSession: Session? {
+    get {
+      userDefaults.currentSession
+    }
+    set {
+      userDefaults.currentSession = newValue
+    }
+  }
+  
+  @MainActor
+  func saveSession(accessToken: String?, refreshToken: String?) {
+    currentSession = Session(accessToken: accessToken, refreshToken: refreshToken)
+  }
+  
+  func deleteSession() {
+    currentSession = nil
+  }
+  
+  var sessionHeaders: [String: String] {
+    guard
+      let session = currentSession,
+      let accessToken = session.accessToken
+    else {
+      return [:]
+    }
+    return [
+      BMHTTPHeader.contentType.rawValue: "application/json",
+      BMHTTPHeader.authorization.rawValue: "Bearer \(accessToken)"
+    ]
+  }
+  
+  var isValidSession: Bool {
+    currentSession?.isValid ?? false
+  }
+}
+
+enum SessionKey {
+  static let userSessionKey = "bm-session"
+}
+
+fileprivate extension UserDefaults {
+
+  static let SESSION_KEY = SessionKey.userSessionKey
+
+  @objc dynamic var currentSession: Session? {
     get {
       guard
-        let data = UserDefaults.standard.data(forKey: sessionKey),
+        let data = UserDefaults.standard.data(forKey: SessionKey.userSessionKey),
         let session = try? JSONDecoder().decode(Session.self, from: data)
       else { return nil }
       return session
     }
     set {
       let json = try? JSONEncoder().encode(newValue)
-      UserDefaults.standard.set(json, forKey: sessionKey)
+      UserDefaults.standard.set(json, forKey: SessionKey.userSessionKey)
     }
-  }
-  
-  var sessionHeaders: [String: String] {
-    guard
-      let session = currentSession,
-      let client = session.client,
-      let accessToken = session.accessToken,
-      let uid = session.uid else {
-        return [:]
-    }
-    return [
-      HTTPHeader.client.rawValue: client,
-      HTTPHeader.token.rawValue: accessToken,
-      HTTPHeader.uid.rawValue: uid,
-      HTTPHeader.contentType.rawValue: "application/json"
-    ]
-  }
-  
-  var isValidSession: Bool {
-    if
-      let session = currentSession,
-      let uid = session.uid,
-      let accessToken = session.accessToken,
-      let client = session.client {
-      return !uid.isEmpty && !accessToken.isEmpty && !client.isEmpty
-    }
-    return false
-  }
-  
-  func deleteSession() {
-    UserDefaults.standard.removeObject(forKey: sessionKey)
   }
 }
