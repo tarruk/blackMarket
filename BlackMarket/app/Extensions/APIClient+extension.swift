@@ -10,9 +10,13 @@ import RSSwiftNetworkingAlamofire
 import Alamofire
 import RSSwiftNetworking
 
-public extension APIClient {
+public typealias BMRequestResponse<T: Decodable> = (
+  result: Result<T?, BMError>,
+  responseHeaders: [AnyHashable: Any]
+)
+public extension BMClient {
   
-  func requestWithoutCookies<T: Decodable>(endpoint: Endpoint) async -> RequestResponse<T> {
+  func requestWithoutCookies<T: Decodable>(endpoint: Endpoint) async -> BMRequestResponse<T> {
     await withCheckedContinuation { continuation in
       
       AF.sessionConfiguration.httpCookieStorage?.removeCookies(since: .distantPast)

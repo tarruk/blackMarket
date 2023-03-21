@@ -7,20 +7,21 @@
 
 import SwiftUI
 
-enum ButtonStyle {
+enum ButtonType {
   case primary
   case secundary
+  case footer
   
   var height: CGFloat {
     switch self {
-    case .primary, .secundary:
+    case .primary, .secundary, .footer:
       return UI.Button.Height.large
     }
   }
   
   var width: CGFloat {
     switch self {
-    case .primary, .secundary:
+    case .primary, .secundary, .footer:
       return .infinity
     }
   }
@@ -29,14 +30,14 @@ enum ButtonStyle {
     switch self {
     case .primary:
       return .black
-    case .secundary:
+    case .secundary, .footer:
       return .clear
     }
   }
   
   var textColor: Color {
     switch self {
-    case .primary:
+    case .primary, .footer:
       return .white
     case .secundary:
       return .blackish
@@ -46,49 +47,51 @@ enum ButtonStyle {
 
 struct ButtonViewModifier: ViewModifier {
   
-  let style: ButtonStyle
+  let type: ButtonType
   var disabled: Bool = false
   
   func body(content: Content) -> some View {
-    switch style {
+    switch type {
     case .primary:
-      buildBorderedConfig(toContent: content)
+      buildBorderlessConfig(toContent: content)
         .disabled(disabled)
     case .secundary:
-      buildBorderlessConfig(toContent: content)
+      buildBorderedConfig(toContent: content)
+    case .footer:
+      buildBorderedConfig(toContent: content, cornerRadius: UI.CornerRadius.medium)
     }
   }
   
-  func buildBorderedConfig(toContent content: Content) -> some View {
+  func buildBorderlessConfig(toContent content: Content) -> some View {
     return content
-      .frame(maxWidth: style.width)
-      .frame(height: style.height)
-      .background(disabled ? .lightGray : style.backgroundColor)
-      .foregroundColor(disabled ? .darkGray : style.textColor)
+      .frame(maxWidth: type.width)
+      .frame(height: type.height)
+      .background(disabled ? .lightGray : type.backgroundColor)
+      .foregroundColor(disabled ? .darkGray : type.textColor)
       .font(.headline)
       .fontWeight(.semibold)
       .cornerRadius(UI.CornerRadius.small)
   }
   
-  func buildBorderlessConfig(toContent content: Content) -> some View {
+  func buildBorderedConfig(toContent content: Content, cornerRadius: CGFloat = UI.CornerRadius.small) -> some View {
     return content
       .font(.headline)
       .fontWeight(.semibold)
-      .frame(maxWidth: style.width)
-      .frame(height: style.height)
-      .foregroundColor(style.textColor)
+      .frame(maxWidth: type.width)
+      .frame(height: type.height)
+      .foregroundColor(type.textColor)
       .overlay(
-        RoundedRectangle(cornerRadius: UI.CornerRadius.small)
+        RoundedRectangle(cornerRadius: cornerRadius)
           .stroke(lineWidth: 1)
-          .background(style.backgroundColor)
-          .foregroundColor(style.textColor)
+          .background(type.backgroundColor)
+          .foregroundColor(type.textColor)
       )
   }
 }
 
 extension Text {
-  func withButtonStyle(_ style: ButtonStyle, disabled: Bool) -> some View {
-    modifier(ButtonViewModifier(style: style, disabled: disabled))
+  func withButtonStyle(_ type: ButtonType, disabled: Bool) -> some View {
+    modifier(ButtonViewModifier(type: type, disabled: disabled))
   }
 }
 

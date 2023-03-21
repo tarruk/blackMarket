@@ -7,7 +7,6 @@
 
 import Foundation
 import RSSwiftNetworking
-import ComposableArchitecture
 
 protocol AuthServiceProtocol {
   func signUp(
@@ -20,19 +19,22 @@ protocol AuthServiceProtocol {
   func logIn(email: String, password: String) async throws -> String
 }
 
-final class AuthService: BMClient, AuthServiceProtocol {
+final class AuthService: AuthServiceProtocol {
   
   enum AuthError: Error {
     case userSessionInvalid
   }
   
-  private let sessionManager: SessionDataManager
+  private let sessionManager: SessionManager
   private let userDataManager: UserDataManager
+  private let apiClient: BMClient
   
   init(
-    sessionManager: SessionDataManager = SessionDataManager.shared,
+    apiClient: BMClient = BMClient.shared,
+    sessionManager: SessionManager = SessionManager.shared,
     userDataManager: UserDataManager = UserDataManager.shared
   ) {
+    self.apiClient = apiClient
     self.sessionManager = sessionManager
     self.userDataManager = userDataManager
   }
@@ -43,7 +45,7 @@ final class AuthService: BMClient, AuthServiceProtocol {
     password: String,
     passwordConfirmation: String
   ) async throws -> String {
-    let response: RequestResponse<GenericResponse> = await apiClient.request(
+    let response: BMRequestResponse<GenericResponse> = await apiClient.request(
       endpoint: AuthEndpoint.signIn(
         email: email,
         password: password,
@@ -63,7 +65,7 @@ final class AuthService: BMClient, AuthServiceProtocol {
   }
   
   func logIn(email: String, password: String) async throws -> String {
-    let response: RequestResponse<UserResponse> = await apiClient.requestWithoutCookies(
+    let response: BMRequestResponse<UserResponse> = await apiClient.requestWithoutCookies(
       endpoint: AuthEndpoint.logIn(
         email: email,
         password: password
@@ -76,7 +78,7 @@ final class AuthService: BMClient, AuthServiceProtocol {
         let user = userResponse?.user,
         let accessToken = userResponse?.accessToken,
         let refreshToken = userResponse?.refreshToken,
-        saveUserSession(
+        await saveUserSession(
           user,
           accessToken: accessToken,
           refreshToken: refreshToken
@@ -91,16 +93,14 @@ final class AuthService: BMClient, AuthServiceProtocol {
   }
   
   
+  @MainActor
   private func saveUserSession(
     _ user: User?,
     accessToken: String,
     refreshToken: String
   ) -> Bool {
     userDataManager.currentUser = user
-    sessionManager.currentSession = Session(
-      accessToken: accessToken,
-      refreshToken: refreshToken
-    )
+    sessionManager.saveSession(accessToken: accessToken, refreshToken: refreshToken)
     return userDataManager.currentUser != nil && sessionManager.isValidSession
   }
 }
