@@ -10,16 +10,13 @@ import ComposableArchitecture
 
 struct DashboardDomain: ReducerProtocol {
   struct State: Equatable {
-    var dashboardBarState = DashboardBarDomain.State()
     var searchBarState = SearchBarDomain.State(text: "")
     var productsState = ProductsDomain.State()
     var promoCardState = PromoCardDomain.State()
     var paymentState = PaymentDomain.State()
-
   }
   
   enum Action {
-    case dashboardBar(DashboardBarDomain.Action)
     case searchBar(SearchBarDomain.Action)
     case products(ProductsDomain.Action)
     case promoCard(PromoCardDomain.Action)
@@ -29,9 +26,6 @@ struct DashboardDomain: ReducerProtocol {
   
   var body: some ReducerProtocol<State, Action> {
     
-    Scope(state: \.dashboardBarState, action: /Action.dashboardBar) {
-      DashboardBarDomain()
-    }
     Scope(state: \.searchBarState, action: /Action.searchBar) {
       SearchBarDomain()
     }

@@ -8,55 +8,59 @@
 import Foundation
 
 // TODO: Replace this mock with the real model of the service
-struct ProductsServiceMock {
+struct ProductsServiceMock: ProductsServiceProtocol {
+  func getProducts(categories: [String]?, page: Int?, pageSize: Int?, search: String?, state: String?, maxPrice: Double?, minPrice: Double?) async throws -> [Product] {
+    return Self.products
+  }
+  
   static let products: [Product] = [
     Product(
-      id: UUID(),
-      title: "Gamer chair",
-      price: 45.6,
+      id: 1,
+      name: "Gamer chair",
       state: .restored,
-      liked: true,
-      imageURL: "product_1"
-    ),
-    Product(
-      id: UUID(),
-      title: "Living chair",
-      price: 20.4,
-      state: .used,
-      liked: false,
-      imageURL: "product_2"
-    ),
-    Product(
-      id: UUID(),
-      title: "Coffee mug",
-      price: 10.93,
-      state: .new,
-      liked: false,
-      imageURL: "product_3"
-    ),
-    Product(
-      id: UUID(),
-      title: "Gamer chair",
       price: 45.6,
-      state: .restored,
-      liked: false,
-      imageURL: "product_1"
+      picture: "product_1",
+      favorite: true
     ),
     Product(
-      id: UUID(),
-      title: "Living chair",
-      price: 20.4,
+      id: 2,
+      name: "Living chair",
       state: .used,
-      liked: false,
-      imageURL: "product_2"
+      price: 20.4,
+      picture: "product_2",
+      favorite: false
     ),
     Product(
-      id: UUID(),
-      title: "Coffee mug",
-      price: 10.93,
+      id: 3,
+      name: "Coffee mug",
       state: .new,
-      liked: true,
-      imageURL: "product_3"
+      price: 10.93,
+      picture: "product_3",
+      favorite: false
+    ),
+    Product(
+      id: 1,
+      name: "Gamer chair",
+      state: .restored,
+      price: 45.6,
+      picture: "product_1",
+      favorite: true
+    ),
+    Product(
+      id: 2,
+      name: "Living chair",
+      state: .used,
+      price: 20.4,
+      picture: "product_2",
+      favorite: false
+    ),
+    Product(
+      id: 3,
+      name: "Coffee mug",
+      state: .new,
+      price: 10.93,
+      picture: "product_3",
+      favorite: false
     ),
   ]
 }

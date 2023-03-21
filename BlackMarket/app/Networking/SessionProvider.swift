@@ -29,7 +29,7 @@ internal class SessionHeadersProvider: BMSessionProvider {
     currentSessionProvider.currentSession
   }
   
-  init(currentSessionProvider: CurrentUserSessionProvider = SessionDataManager()) {
+  init(currentSessionProvider: CurrentUserSessionProvider = SessionManager()) {
     self.currentSessionProvider = currentSessionProvider
   }
 }
