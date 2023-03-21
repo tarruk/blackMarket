@@ -8,42 +8,28 @@
 import Foundation
 import RSSwiftNetworking
 
-struct Session: Codable {
-  var uid: String?
-  var client: String?
-  var accessToken: String?
-  var expiry: Date?
+class Session: NSObject, Codable {
+  @objc dynamic var accessToken: String?
+  @objc dynamic var refreshToken: String?
+  
+  var isValid: Bool {
+    if
+      let accessToken = accessToken {
+      return !accessToken.isEmpty
+    }
+    return false
+  }
   
   private enum CodingKeys: String, CodingKey {
-    case uid
-    case client
-    case accessToken = "access-token"
-    case expiry
-  }
-
-  init(
-    uid: String? = nil, client: String? = nil,
-    token: String? = nil, expires: Date? = nil
-  ) {
-    self.uid = uid
-    self.client = client
-    self.accessToken = token
-    self.expiry = expires
+    case accessToken = "access_token"
+    case refreshToken = "refresh_token"
   }
   
-  init?(headers: [AnyHashable: Any]) {
-    guard var stringHeaders = headers as? [String: String] else {
-      return nil
-    }
-
-    stringHeaders.lowercaseKeys()
-    
-    if let expiryString = stringHeaders[HTTPHeader.expiry.rawValue],
-      let expiryNumber = Double(expiryString) {
-      expiry = Date(timeIntervalSince1970: expiryNumber)
-    }
-    uid = stringHeaders[HTTPHeader.uid.rawValue]
-    client = stringHeaders[HTTPHeader.client.rawValue]
-    accessToken = stringHeaders[HTTPHeader.token.rawValue]
+  init(
+    accessToken: String? = nil,
+    refreshToken: String? = nil
+  ) {
+    self.accessToken = accessToken
+    self.refreshToken = refreshToken
   }
 }

@@ -24,4 +24,8 @@ extension String {
     }
     return attributedText
   }
+  
+  var urlSpacesSensible: String {
+    return self.replacingOccurrences(of: " ", with: "%20")
+  }
 }

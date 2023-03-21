@@ -49,14 +49,14 @@ struct BMTextFieldDomain: ReducerProtocol {
   
   enum Action: BindableAction {
     case binding(BindingAction<State>)
-    case secureTextFieldValueChanged(SecureToggleTextFieldDomain.Action)
+    case secureTextFieldBinding(SecureToggleTextFieldDomain.Action)
   }
   
   var body: some ReducerProtocol<State, Action> {
     
     BindingReducer()
     
-    Scope(state: \.secureTextFieldState, action: /Action.secureTextFieldValueChanged) {
+    Scope(state: \.secureTextFieldState, action: /Action.secureTextFieldBinding) {
       SecureToggleTextFieldDomain()
     }
     
@@ -66,7 +66,7 @@ struct BMTextFieldDomain: ReducerProtocol {
         state.isValid = state.text.validates(state.validations)
         state.shouldShowError = !state.isValid
         return .none
-      case .secureTextFieldValueChanged:
+      case .secureTextFieldBinding:
         state.text = state.secureTextFieldState.text
         state.isValid = state.text.validates(state.validations)
         state.shouldShowError = !state.isValid
