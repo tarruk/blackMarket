@@ -36,6 +36,7 @@ struct AuthDomain: ReducerProtocol {
     case receiveAuthResult(TaskResult<String>)
     case signUp(email: String, password: String, confirmPassword: String)
     case login(email: String, password: String)
+    case handleError(_ error: Error)
   }
   
   var body: some ReducerProtocol<State, Action> {
@@ -107,12 +108,16 @@ struct AuthDomain: ReducerProtocol {
       case let .receiveAuthResult(result):
         state.isLoading = false
         switch result {
+          
         case .failure(let error):
           return .task {
-            // TODO: Add Error handling
-            Action.presentPrompt(.showPrompt(message: error.localizedDescription, style: .error, show: true))
+            .handleError(error)
           }
         default: return .none
+        }
+      case let .handleError(error):
+        return .task {
+          Action.presentPrompt(.showPrompt(message: error.localizedDescription, style: .error, show: true))
         }
       default: return .none
       }

@@ -8,10 +8,10 @@
 import Foundation
 import SwiftUI
 
-enum ProductState: Decodable {
-  case restored
-  case new
-  case used
+enum ProductState: String, Decodable {
+  case restored = "A"
+  case new = "N"
+  case used = "U"
   
   var title: String {
     switch self {

@@ -16,6 +16,7 @@ struct AuthView: View {
       GeometryReader { reader in
         ZStack {
           Image.background
+            .resizable()
             .ignoresSafeArea()
           switch viewStore.currentScene {
           case .login:

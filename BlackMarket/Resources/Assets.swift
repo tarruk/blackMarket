@@ -16,8 +16,6 @@ extension Image {
   static let error = Image(systemName: "xmark.circle.fill")
   static let warning = Image(systemName: "exclamationmark.circle.fill")
   static let success = Image(systemName: "checkmark.circle.fill")
-  static let shoppingCart = Image("shopping_cart")
-  static let menu = Image("menu")
   static let search = Image(systemName: "magnifyingglass")
   static let selectedHeart = Image(systemName: "heart.fill")
   static let unselectedHeart = Image(systemName: "heart")
@@ -28,7 +26,13 @@ extension Image {
   static let linkedin = Image("linkedin")
   static let instagram = Image("instagram")
   static let twitter = Image("twitter")
-  
+  static let picturePlaceholder = Image(systemName: "photo.fill")
+  static let productsNotFound = Image("products_not_found")
+  static let homeTab = Image(systemName: "house.fill")
+  static let purchasesTab = Image("sell_icon")
+  static let favoritesTab = Image("favorites_icon")
+  static let shoppingCartTab = Image("shopping_cart_icon")
+  static let menuTab = Image("menu_icon")
   static func eye(slashed: Bool) -> Image {
     return slashed ? Self.eyeSlash : Self.eye
   }
