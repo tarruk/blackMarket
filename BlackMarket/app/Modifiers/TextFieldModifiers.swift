@@ -23,3 +23,19 @@ struct TextFieldLoginModifier: ViewModifier {
       )
   }
 }
+
+struct FooterTextfieldModifier: ViewModifier {
+
+  func body(content: Content) -> some View {
+    RoundedRectangle(cornerRadius: UI.CornerRadius.medium)
+      .foregroundColor(.white)
+      .overlay {
+        content
+          .disableAutocorrection(true)
+          .autocapitalization(.none)
+          .padding()
+      }
+      .frame(maxWidth: .infinity)
+      .frame(height: 50)
+  }
+}
