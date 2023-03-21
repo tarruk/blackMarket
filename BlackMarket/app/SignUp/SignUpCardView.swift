@@ -42,7 +42,11 @@ struct SignUpCardView: View {
             style: .primary,
             disabled: !viewStore.canSignUp
           ) {
-            // TODO: trigger signUp action
+            viewStore.send(.signIn(
+              email: viewStore.emailState.text,
+              password: viewStore.passwordState.text,
+              confirmedPassword: viewStore.passwordState.text
+            ))
           }
           .padding(.top)
           Spacer()
