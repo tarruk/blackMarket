@@ -11,18 +11,25 @@ import SwiftUI
 
 struct ProductCardDomain: ReducerProtocol {
   struct State: Equatable {
-    var image: Image
+    var id: Int
+    var imageURL: URL?
     var title: String
     var formattedPrice: String
     var productState: ProductState
     var liked: Bool
     
+    // TODO: remove default values when the product model is complete from backend
     init(product: Product) {
-      self.image = Image(product.imageURL)
-      self.title = product.title
-      self.formattedPrice = "$\(product.price)"
-      self.productState = product.state
-      self.liked = product.liked
+      self.id = product.id
+      self.imageURL = URL(string: product.picture?.urlSpacesSensible ?? "")
+      self.title = product.name
+      self.formattedPrice = "$\(product.price ?? 0)"
+      self.productState = product.state ?? .new
+      self.liked = product.favorite ?? false
+    }
+    
+    static func == (lhs: ProductCardDomain.State, rhs: ProductCardDomain.State) -> Bool {
+      lhs.id == rhs.id
     }
   }
   

@@ -28,3 +28,13 @@
 
 // MARK: Dashboard
 "SEARCHBAR_PLACEHOLDER" = "Search for products";
+"PAYMENT_METHODS_TITLE" = "Payment methods";
+"SEE_ALL_BUTTON_TITLE" = "See all";
+"NO_PRODUCTS_FOUND" = "No products found";
+
+// MARK: PurchasedProducts
+"FORMATTED_BOUGHT_DATE" = "Bought on %@";
+"PURCHASES_TITLE" = "My previous purchases";
+"PURCHASED_ITEM_FORMATTED_PRICE" = "Price: $%@";
+"PURCHASED_ITEM" = "item";
+"PURCHASED_ITEMS" = "items";

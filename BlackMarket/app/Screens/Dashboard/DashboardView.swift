@@ -11,28 +11,52 @@ import ComposableArchitecture
 struct DashboardView: View {
   let store: StoreOf<DashboardDomain>
   
+  @EnvironmentObject var mainRouter: MainRouter
+  
   var body: some View {
     WithViewStore(store) { viewStore in
-      VStack(spacing: .zero) {
-        DashboardBarView(
-          store: store.scope(
-            state: \.dashboardBarState,
-            action: DashboardDomain.Action.dashboardBarAction
+      NavigationStack(path: mainRouter.bindingStack) {
+        VStack(spacing: .zero) {
+          DashboardBarView()
+          SearchBarView(
+            store: store.scope(
+              state: \.searchBarState,
+              action: DashboardDomain.Action.searchBar
+            )
           )
-        )
-        SearchBarView(
-          store: store.scope(
-            state: \.searchBarState,
-            action: DashboardDomain.Action.searchBarAction
-          )
-        )
-        ProductsView(
-          store: store.scope(
-            state: \.productsState,
-            action: DashboardDomain.Action.productsAction
-          )
-        )
-        Spacer()
+          ScrollView(.vertical, showsIndicators: false) {
+            ProductsView(
+              store: store.scope(
+                state: \.productsState,
+                action: DashboardDomain.Action.products
+              )
+            )
+            .environmentObject(mainRouter)
+            
+            if !viewStore.productsState.products.isEmpty {
+              Button {
+                viewStore.send(.seeAllButtonTapped)
+              } label: {
+                Text(LocalizedString.DashboardView.seeAllButtonTitle)
+                  .fontWeight(.bold)
+              }.padding()
+            }
+            
+            PromoCardView(
+              store: store.scope(
+                state: \.promoCardState,
+                action: DashboardDomain.Action.promoCard
+              )
+            ).padding()
+            PaymentView(
+              store: store.scope(
+                state: \.paymentState,
+                action: DashboardDomain.Action.payment
+              )
+            ).padding()
+            Spacer()
+          }.ignoresSafeArea()
+        }.registerStackDestinations(forRouter: mainRouter)
       }
     }
   }
@@ -47,4 +71,10 @@ struct DashboardView_Previews: PreviewProvider {
         )
       )
     }
+}
+
+private extension LocalizedString {
+  enum DashboardView {
+    static let seeAllButtonTitle = "SEE_ALL_BUTTON_TITLE".localized
+  }
 }
