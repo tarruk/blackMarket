@@ -26,7 +26,10 @@ enum TabRoute: Route {
           reducer: DashboardDomain()
         ))
     case .purchases:
-     PurcharsesDetailView()
+     PurchasesView(store: Store(
+      initialState: PurchasesDomain.State(),
+      reducer: PurchasesDomain()
+     ))
     case .shoppingCart:
       Text("Shopping Cart")
     case .favorites:

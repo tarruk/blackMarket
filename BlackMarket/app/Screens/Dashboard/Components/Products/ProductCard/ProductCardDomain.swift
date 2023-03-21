@@ -24,7 +24,7 @@ struct ProductCardDomain: ReducerProtocol {
       self.imageURL = URL(string: product.picture?.urlSpacesSensible ?? "")
       self.title = product.name
       self.formattedPrice = "$\(product.price ?? 0)"
-      self.productState = product.state ?? .N
+      self.productState = product.state ?? .new
       self.liked = product.favorite ?? false
     }
     
