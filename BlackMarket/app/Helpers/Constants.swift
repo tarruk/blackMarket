@@ -12,4 +12,7 @@ struct Constants {
     static let dataPolicy = "https://google.com"
     static let cookiesPolicy = "https://google.com"
   }
+  enum Auth {
+    static let minimumPasswordLength: Int = 8
+  }
 }

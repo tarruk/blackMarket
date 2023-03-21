@@ -22,3 +22,7 @@
 "EMAIL_TEXTFIELD_PLACEHOLDER" = "example@email.com";
 "NAME_TEXTFIELD_PLACEHOLDER" = "Enter your name";
 "PASSWORD_TEXTFIELD_PLACEHOLDER" = "Enter your password";
+
+// MARK: LogInCardView
+"FORGOT_PASWORD_BUTTON_TITLE" = "I forgot my password";
+"DONT_HAVE_ACCOUNT_TITLE" = "Don't have an account?";
