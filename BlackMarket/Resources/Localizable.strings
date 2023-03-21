@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  BlackMarket
+
+  Created by Tarek Radovan on 07/12/2022.
+  
+*/
+
+"DATA_POLICY" = "[Data Policy]";
+"COOKIES_POLICY" = "[Cookies Policy]";
+"EMAIL_TEXTFIELD_TITLE" = "Email";
+"NAME_TEXTFIELD_TITLE" = "Name";
+"PASSWORD_TEXTFIELD_TITLE" = "Password";
+"EMAIL_TEXTFIELD_ERROR" = "Wrong email format";
+"NAME_TEXTFIELD_ERROR" = "Enter a name";
+"PASSWORD_TEXTFIELD_ERROR" = "Password must be at least 8 characters long";
+"SIGNUP_BUTTON_TITLE" = "Sign up";
+"POLICY_DISCLAIMER_1" = "By signin up, you accept the ";
+"POLICY_DISCLAIMER_2" = ", and the ";
+"LOGIN_BUTTON_TITLE" = "Log in";
+"ALREADY_HAVE_ACCOUNT_TITLE" = "Already have an account?";
+"EMAIL_TEXTFIELD_PLACEHOLDER" = "example@email.com";
+"NAME_TEXTFIELD_PLACEHOLDER" = "Enter your name";
+"PASSWORD_TEXTFIELD_PLACEHOLDER" = "Enter your password";
